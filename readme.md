@@ -10,7 +10,7 @@ This project contains complete installation commands and config files for create
 
 ## Grub background
 
-<img src="grub.png" alt="grub" />
+<img src="grub-screen.png" alt="grub-screen" />
 
 ## Create install environment
 
