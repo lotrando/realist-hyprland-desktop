@@ -6,7 +6,7 @@ This project contains complete installation commands and config files for create
 
 ## Final desktop screenshot
 
-<img src="hyprland-screen.png" alt="xmonad-screen" />
+<img src="hyprland-screen.png" alt="hyprland-screen" />
 
 ## Grub background
 
