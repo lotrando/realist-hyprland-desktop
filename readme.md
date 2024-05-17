@@ -33,12 +33,6 @@ name 2 ROOT
 quit
 ```
 
-### Filesystems
-
-```
-mkdir -p /mnt/gentoo/boot && mount /dev/nvme0n1p1 /mnt/gentoo/boot
-```
-
 SSD or SATA disk (Virtualbox)
 
 ```
@@ -128,7 +122,7 @@ rm make.conf && rm -R package.use && rm -R package.accept_keywords && rm -R pack
 ### File - /etc/portage/make.conf
 
 ```
-wget https://raw.githubusercontent.com/lotrando/realist-xmonad-desktop/main/make.conf
+wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/make.conf
 ```
 
 ```
@@ -139,7 +133,7 @@ wget https://raw.githubusercontent.com/lotrando/realist-xmonad-desktop/main/make
 ### File - /etc/portage/package.accept_keywords
 
 ```
-wget https://raw.githubusercontent.com/lotrando/realist-xmonad-desktop/main/package.accept_keywords
+wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/package.accept_keywords
 ```
 
 ```
@@ -150,7 +144,7 @@ wget https://raw.githubusercontent.com/lotrando/realist-xmonad-desktop/main/pack
 ### File - /etc/portage/package.use
 
 ```
-wget https://raw.githubusercontent.com/lotrando/realist-xmonad-desktop/main/package.use
+wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/package.use
 ```
 
 ```
@@ -161,7 +155,7 @@ wget https://raw.githubusercontent.com/lotrando/realist-xmonad-desktop/main/pack
 ### Edit file - /etc/portage/package.license
 
 ```
-wget https://raw.githubusercontent.com/lotrando/realist-xmonad-desktop/main/package.license
+wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/package.license
 ```
 
 ```
@@ -172,7 +166,7 @@ wget https://raw.githubusercontent.com/lotrando/realist-xmonad-desktop/main/pack
 ### Edit file - /etc/portage/package.mask
 
 ```
-wget https://raw.githubusercontent.com/lotrando/realist-xmonad-desktop/main/package.mask
+wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/package.mask
 ```
 
 ```
@@ -378,7 +372,7 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=XMONAD --
 ```
 
 ```
-cd /boot/grub && wget -q wget https://raw.githubusercontent.com/lotrando/realist-xmonad-desktop/main/grub.png
+cd /boot/grub && wget -q wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/grub.png
 ```
 
 ```
