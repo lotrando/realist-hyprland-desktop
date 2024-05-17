@@ -6,23 +6,16 @@ This project contains complete installation commands and config files for create
 
 ## Final desktop screenshot
 
-<img src="hyprland-screen.png" alt="hyprland-screen" />
+<img src="" alt="hyprland-screen" />
 
 ## Grub background
 
-<img src="grub-screen.png" alt="grub-screen" />
+<img src="" alt="grub-screen" />
 
 ## Create install environment
 
 ### Partitions
-
-M2 Disk
-
-```
-parted -s /dev/nvme0n1 mklabel gpt && parted -a optimal /dev/nvme0n1
-```
-
-SSD or SATA Disk
+SSD / SATA Disk
 
 ```
 parted -s /dev/sda mklabel gpt && parted -a optimal /dev/sda
@@ -67,11 +60,11 @@ cd /mnt/gentoo
 ```
 
 ```
-wget https://distfiles.gentoo.org/releases/amd64/autobuilds/20240513T220354Z/stage3-amd64-openrc-20240513T220354Z.tar.xz
+wget https://distfiles.gentoo.org/releases/amd64/autobuilds/20240514T170404Z/stage3-amd64-openrc-20240514T170404Z.tar.xz
 ```
 
 ```
-tar xpf stage3-amd64-openrc-20240513T220354Z.tar.xz --xattrs-include='*.*' --numeric-owner
+tar xpf stage3-amd64-openrc-20240514T170404Z.tar.xz --xattrs-include='*.*' --numeric-owner
 ```
 
 ```
