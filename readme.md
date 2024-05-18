@@ -590,6 +590,9 @@ echo "realist:toor" | chpasswd -c SHA256
 
 ### Create kernel ( ZEN Sources recommended )
 
+export XDG_RUNTIME_DIR=/run/user/$UID
+
+
 ```
 emerge -g genkernel linux-firmware zen-sources && genkernel all
 ```
