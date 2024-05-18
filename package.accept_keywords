@@ -1,0 +1,122 @@
+# RHMD - Realist Hyprland Minimal Desktop
+# package.accept_keywords file -> /etc/portage/package.accept_keywords
+
+# Hyprland
+gui-apps/hyprlock ~amd64
+gui-apps/hypridle ~amd64
+gui-libs/xdg-desktop-portal-hyprland ~amd64
+gui-apps/hyprpaper ~amd64
+gui-apps/hyprpicker ~amd64
+gui-apps/waybar ~amd64
+gui-apps/swaync ~amd64
+gui-apps/rofi-wayland ~amd64
+gui-wm/hyprland-contrib ~amd64
+dev-cpp/sdbus-c++ ~amd64
+gui-apps/nwg ~amd64
+app-misc/nwg-look ~amd64
+app-misc/nwg-shell-wallpapers ~amd64
+gui-apps/nwg-displays ~amd64
+gui-apps/nwg-dock ~amd64
+gui-apps/nwg-drawer ~amd64
+gui-apps/nwg-icon-picker ~amd64
+gui-apps/nwg-menu ~amd64
+gui-apps/nwg-panel ~amd64
+gui-apps/nwg-shell ~amd64
+gui-apps/nwg-shell-config ~amd64
+sci-geosciences/geopy ~amd64
+dev-python/geographiclib ~amd64
+dev-python/i3ipc ~amd64
+dev-python/dasbus ~amd64
+gui-apps/wlr-randr ~amd64
+x11-apps/xcur2png ~amd64
+gui-apps/nwg-dock-hyprland ~amd64
+gui-apps/azote ~amd64
+dev-python/colorthief ~amd64
+
+# APP-EDITORS
+app-editors/sublime-text ~amd64
+app-editors/vscode ~amd64
+
+# APP-EMULATORS
+app-emulation/fs-uae ~amd64
+app-emulation/fs-uae-launcher ~amd64
+
+# APP-MISC
+app-misc/radeontop ~amd64
+app-misc/ca-certificates ~amd64
+app-misc/ufetch ~amd64
+
+# DEV-PHP
+dev-php/ca-bundle ~amd64
+dev-php/composer ~amd64
+dev-php/json-schema ~amd64
+dev-php/jsonlint ~amd64
+dev-php/metadata-minifier ~amd64
+dev-php/phar-utils ~amd64
+dev-php/php ~amd64
+dev-php/psr-log ~amd64
+dev-php/semver ~amd64
+dev-php/spdx-licenses ~amd64
+dev-php/symfony-config ~amd64
+dev-php/symfony-console ~amd64
+dev-php/symfony-dependency-injection ~amd64
+dev-php/symfony-event-dispatcher ~amd64
+dev-php/symfony-filesystem ~amd64
+dev-php/symfony-finder ~amd64
+dev-php/symfony-process ~amd64
+dev-php/xdebug-handler ~amd64
+
+# DEV-PYTHON
+dev-python/python-lhafile ~amd64
+dev-python/sphinx ~amd64
+
+# SYS-KERNEL
+sys-kernel/zen-sources ~amd64
+
+# APP-SHELLS
+app-shells/oh-my-zsh ~amd64
+app-shells/zsh-autosuggestions ~amd64
+app-shells/zsh-syntax-highlighting ~amd64
+
+# DEV-LANG
+dev-lang/php ~amd64
+
+# DEV-UTIL
+dev-util/ragel ~amd64
+dev-util/colm ~amd64
+dev-util/jetbrains-toolbox ~amd64
+
+# GNOME-EXTRA
+gnome-extra/yad ~amd64
+
+# NET-MISC
+net-misc/youtube-viewer ~amd64
+
+# MEDIA-VIDEO
+media-video/obs-studio ~amd64
+media-video/pipewire ~amd64
+media-video/wireplumber ~amd64
+
+# MEDIA-TV
+media-tv/plex-media-server ~amd64
+
+# SYS-APSS
+sys-apps/eza ~amd64
+
+# WWW-CLIENT
+www-client/microsoft-edge ~amd64
+
+# X11-BASE
+x11-base/xcb-proto ~amd64
+
+# X11-LIBS
+x11-libs/libfm ~amd64
+x11-libs/libxcb ~amd64
+
+# X11-MISC
+x11-misc/notify-osd ~amd64
+x11-misc/pcmanfm ~amd64
+
+# X11-THEMES
+x11-themes/elementary-xfce-icon-theme ~amd64
+x11-themes/notify-osd-icons ~amd64

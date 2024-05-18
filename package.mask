@@ -1,0 +1,2 @@
+# RXMD - Realist Xmonad Minimal Desktop
+# package.mask file -> /etc/portage/package.mask
