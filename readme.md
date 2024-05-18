@@ -127,7 +127,38 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/ma
 
 ```
 # RHMD - Realist Hyperland Minimal Desktop LTO & GPO version
-# make.conf file -> /etc/portage/make.conf
+# make.conf file (c) 2022 -> /etc/portage/make.conf
+
+USE="alsa dbus elogind jpeg libnotify png pulseaudio pipewire nls vulkan wayland -X"
+CPU_FLAGS_X86="aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1 sse4_2 ssse3"
+
+COMMON_FLAGS="-O2 -pipe -fomit-frame-pointer"
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+FCFLAGS="${COMMON_FLAGS}"
+FFLAGS="${COMMON_FLAGS}"
+MAKE_OPTS="-j6"
+
+GENTOO_MIRRORS="https://mirror.dkm.cz/gentoo/"
+PORTAGE_BINHOST="http://94.113.201.164:55/hyprland"
+PORTDIR="/var/db/repos/gentoo"
+DISTDIR="/var/cache/distfiles"
+PKGDIR="/var/cache/binpkgs"
+PORTAGE_NICENESS=19
+PORTAGE_IONICE_COMMAND="ionice -c 3 -p \${PID}"
+EMERGE_DEFAULT_OPTS="-v --ask-enter-invalid --jobs=1 --load-average=6"
+FEATURES="downgrade-backup parallel-fetch sign"
+
+ACCEPT_KEYWORDS="amd64"
+ACCEPT_LICENSE="-* @FREE"
+GRUB_PLATFORMS="pc efi-64"
+
+LC_ALL=C
+LC_MESSAGES=C
+L10N="cs"
+
+INPUT_DEVICES="libinput"
+VIDEO_CARDS="amdgpu radeonsi"
 ```
 
 ### File - /etc/portage/package.accept_keywords
@@ -139,6 +170,126 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 ```
 # RHMD - Realist Hyperland Minimal Desktop LTO & GPO version
 # package.accept_keywords file -> /etc/portage/package.accept_keywords
+
+# Hyprland
+gui-apps/hyprlock ~amd64
+gui-apps/hypridle ~amd64
+gui-libs/xdg-desktop-portal-hyprland ~amd64
+gui-apps/hyprpaper ~amd64
+gui-apps/hyprpicker ~amd64
+gui-apps/waybar ~amd64
+gui-apps/swaync ~amd64
+gui-apps/rofi-wayland ~amd64
+gui-wm/hyprland-contrib ~amd64
+dev-cpp/sdbus-c++ ~amd64
+gui-apps/nwg ~amd64
+app-misc/nwg-look ~amd64
+app-misc/nwg-shell-wallpapers ~amd64
+gui-apps/nwg-displays ~amd64
+gui-apps/nwg-dock ~amd64
+gui-apps/nwg-drawer ~amd64
+gui-apps/nwg-icon-picker ~amd64
+gui-apps/nwg-menu ~amd64
+gui-apps/nwg-panel ~amd64
+gui-apps/nwg-shell ~amd64
+gui-apps/nwg-shell-config ~amd64
+sci-geosciences/geopy ~amd64
+dev-python/geographiclib ~amd64
+dev-python/i3ipc ~amd64
+dev-python/dasbus ~amd64
+gui-apps/wlr-randr ~amd64
+x11-apps/xcur2png ~amd64
+gui-apps/nwg-dock-hyprland ~amd64
+gui-apps/azote ~amd64
+dev-python/colorthief ~amd64
+
+# APP-EDITORS
+app-editors/sublime-text ~amd64
+app-editors/vscode ~amd64
+
+# APP-EMULATORS
+app-emulation/fs-uae ~amd64
+app-emulation/fs-uae-launcher ~amd64
+
+# APP-MISC
+app-misc/radeontop ~amd64
+app-misc/ca-certificates ~amd64
+app-misc/ufetch ~amd64
+
+# DEV-PHP
+dev-php/ca-bundle ~amd64
+dev-php/composer ~amd64
+dev-php/json-schema ~amd64
+dev-php/jsonlint ~amd64
+dev-php/metadata-minifier ~amd64
+dev-php/phar-utils ~amd64
+dev-php/php ~amd64
+dev-php/psr-log ~amd64
+dev-php/semver ~amd64
+dev-php/spdx-licenses ~amd64
+dev-php/symfony-config ~amd64
+dev-php/symfony-console ~amd64
+dev-php/symfony-dependency-injection ~amd64
+dev-php/symfony-event-dispatcher ~amd64
+dev-php/symfony-filesystem ~amd64
+dev-php/symfony-finder ~amd64
+dev-php/symfony-process ~amd64
+dev-php/xdebug-handler ~amd64
+
+# DEV-PYTHON
+dev-python/python-lhafile ~amd64
+dev-python/sphinx ~amd64
+
+# SYS-KERNEL
+sys-kernel/zen-sources ~amd64
+
+# APP-SHELLS
+app-shells/oh-my-zsh ~amd64
+app-shells/zsh-autosuggestions ~amd64
+app-shells/zsh-syntax-highlighting ~amd64
+
+# DEV-LANG
+dev-lang/php ~amd64
+
+# DEV-UTIL
+dev-util/ragel ~amd64
+dev-util/colm ~amd64
+dev-util/jetbrains-toolbox ~amd64
+
+# GNOME-EXTRA
+gnome-extra/yad ~amd64
+
+# NET-MISC
+net-misc/youtube-viewer ~amd64
+
+# MEDIA-VIDEO
+media-video/obs-studio ~amd64
+media-video/pipewire ~amd64
+media-video/wireplumber ~amd64
+
+# MEDIA-TV
+media-tv/plex-media-server ~amd64
+
+# SYS-APSS
+sys-apps/eza ~amd64
+
+# WWW-CLIENT
+www-client/microsoft-edge ~amd64
+
+# X11-BASE
+x11-base/xcb-proto ~amd64
+
+# X11-LIBS
+x11-libs/libfm ~amd64
+x11-libs/libxcb ~amd64
+
+# X11-MISC
+x11-misc/notify-osd ~amd64
+x11-misc/pcmanfm ~amd64
+
+# X11-THEMES
+x11-themes/elementary-xfce-icon-theme ~amd64
+x11-themes/notify-osd-icons ~amd64
 ```
 
 ### File - /etc/portage/package.use
@@ -161,6 +312,26 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 ```
 # RHMD - Realist Hyperland Minimal Desktop LTO & GPO version
 # package.license file -> /etc/portage/package.license
+
+# APP-EDITORS
+app-editors/sublime-text Sublime
+app-editors/vscode Microsoft-vscode
+
+# APP-ARCH
+app-arch/rar RAR
+
+# DEV-UTIL
+dev-util/jetbrains-toolbox JetBrainsToolbox
+
+# MEDIA-FONTS
+media-fonts/corefonts MSttfEULA
+
+# SYS-KERNEL
+sys-kernel/linux-firmware linux-fw-redistributable no-source-code
+
+# WWW-CLIENT
+www-client/microsoft-edge-beta microsoft-edge
+www-client/microsoft-edge microsoft-edge
 ```
 
 ### Edit file - /etc/portage/package.mask
