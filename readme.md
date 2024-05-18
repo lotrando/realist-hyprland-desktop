@@ -168,53 +168,58 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 ```
 
 ```
-# RHMD - Realist Hyperland Minimal Desktop LTO & GPO version
+# RHMD - Realist Hyprland Minimal Desktop
 # package.accept_keywords file -> /etc/portage/package.accept_keywords
 
-# Hyprland
-gui-apps/hyprlock ~amd64
-gui-apps/hypridle ~amd64
-gui-libs/xdg-desktop-portal-hyprland ~amd64
-gui-apps/hyprpaper ~amd64
-gui-apps/hyprpicker ~amd64
-gui-apps/waybar ~amd64
-gui-apps/swaync ~amd64
-gui-apps/rofi-wayland ~amd64
-gui-wm/hyprland-contrib ~amd64
-dev-cpp/sdbus-c++ ~amd64
-gui-apps/nwg ~amd64
+# APP-MISC [Hyprland]
 app-misc/nwg-look ~amd64
 app-misc/nwg-shell-wallpapers ~amd64
+
+# DEV-CPP [Hyprland]
+dev-cpp/sdbus-c++ ~amd64
+
+# DEV-PYTHON [Hyprland]
+dev-python/colorthief ~amd64
+dev-python/dasbus ~amd64
+dev-python/geographiclib ~amd64
+dev-python/i3ipc ~amd64
+
+# GUI-APPS [Hyprland]
+gui-apps/azote ~amd64
+gui-apps/hypridle ~amd64
+gui-apps/hyprlock ~amd64
+gui-apps/hyprpaper ~amd64
+gui-apps/hyprpicker ~amd64
+gui-apps/nwg ~amd64
 gui-apps/nwg-displays ~amd64
 gui-apps/nwg-dock ~amd64
+gui-apps/nwg-dock-hyprland ~amd64
 gui-apps/nwg-drawer ~amd64
 gui-apps/nwg-icon-picker ~amd64
 gui-apps/nwg-menu ~amd64
 gui-apps/nwg-panel ~amd64
 gui-apps/nwg-shell ~amd64
 gui-apps/nwg-shell-config ~amd64
-sci-geosciences/geopy ~amd64
-dev-python/geographiclib ~amd64
-dev-python/i3ipc ~amd64
-dev-python/dasbus ~amd64
+gui-apps/rofi-wayland ~amd64
+gui-apps/swaync ~amd64
+gui-apps/waybar ~amd64
 gui-apps/wlr-randr ~amd64
-x11-apps/xcur2png ~amd64
-gui-apps/nwg-dock-hyprland ~amd64
-gui-apps/azote ~amd64
-dev-python/colorthief ~amd64
+
+# GUI-LIBS [Hyprland]
+gui-libs/xdg-desktop-portal-hyprland ~amd64
+
+# GUI-WM [Hyprland]
+gui-wm/hyprland-contrib ~amd64
+
+# SCI-GEOSCIENCES [Hyprland]
+sci-geosciences/geopy ~amd64
 
 # APP-EDITORS
 app-editors/sublime-text ~amd64
 app-editors/vscode ~amd64
 
-# APP-EMULATORS
-app-emulation/fs-uae ~amd64
-app-emulation/fs-uae-launcher ~amd64
-
 # APP-MISC
-app-misc/radeontop ~amd64
 app-misc/ca-certificates ~amd64
-app-misc/ufetch ~amd64
 
 # DEV-PHP
 dev-php/ca-bundle ~amd64
@@ -254,7 +259,6 @@ dev-lang/php ~amd64
 # DEV-UTIL
 dev-util/ragel ~amd64
 dev-util/colm ~amd64
-dev-util/jetbrains-toolbox ~amd64
 
 # GNOME-EXTRA
 gnome-extra/yad ~amd64
@@ -267,14 +271,11 @@ media-video/obs-studio ~amd64
 media-video/pipewire ~amd64
 media-video/wireplumber ~amd64
 
-# MEDIA-TV
-media-tv/plex-media-server ~amd64
-
 # SYS-APSS
 sys-apps/eza ~amd64
 
-# WWW-CLIENT
-www-client/microsoft-edge ~amd64
+# X11-APPS [Hyprland]
+x11-apps/xcur2png ~amd64
 
 # X11-BASE
 x11-base/xcb-proto ~amd64
@@ -299,11 +300,14 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 ```
 
 ```
-# RHMD - Realist Hyperland Minimal Desktop LTO & GPO version
+# RHMD - Realist Hyprland Minimal Desktop
 # package.use file -> /etc/portage/package.use
 
 # APP-ADMIN
 app-admin/sudo -sendmail
+
+# APP-CRYPT
+app-crypt/gcr gtk
 
 # APP-EDITORS
 app-editors/nano magic
@@ -336,6 +340,7 @@ dev-lang/python lto pgo
 dev-libs/elfutils lzma zstd
 dev-libs/libxml2 icu
 dev-libs/sexp static-libs
+dev-libs/libdbusmenu gtk3
 
 # DEV-PYTHON
 dev-python/PyQt5 -bluetooth dbus declarative gui multimedia network opengl printsupport svg widgets
@@ -346,8 +351,8 @@ dev-vcs/git -perl
 
 # DEV-QT
 dev-qt/qtmultimedia widgets
-dev-qt/qtbase opengl
 dev-qt/qtgui egl vulkan
+dev-qt/qtbase opengl
 
 # GNOME-BASE
 gnome-base/gvfs cdda http udisks nfs archive
@@ -367,9 +372,7 @@ media-fonts/terminus-font -ru-g
 media-fonts/fontawesome ttf
 
 # MEDIA-GFX
-media-gfx/gimp jpeg2k jpegxl udev vector-icons webp wmf xpm
 media-gfx/imagemagick djvu lzma raw svg truetype zip xml
-media-gfx/inkscape exif imagemagick svg2
 
 # MEDIA-LIBS
 media-libs/audiofile flac
@@ -377,10 +380,10 @@ media-libs/flac ogg
 media-libs/gegl cairo
 media-libs/harfbuzz icu
 media-libs/libsdl opengl
-media-libs/libsdl2 haptic opengl gles2
+media-libs/libsdl2 X haptic opengl gles2
 media-libs/libsndfile minimal
 media-libs/libvpx postproc
-media-libs/mesa d3d9 lm-sensor wayland
+media-libs/mesa d3d9 lm-sensor
 
 # MEDIA-PLUGINS
 media-plugins/alsa-plugins pulseaudio
@@ -432,6 +435,7 @@ x11-libs/libdrm video_cards_radeon
 x11-libs/motif xft
 x11-libs/gtk+ wayland X
 x11-libs/libxkbcommon X
+x11-libs/pango X
 ```
 
 ### Edit file - /etc/portage/package.license
@@ -441,7 +445,7 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 ```
 
 ```
-# RHMD - Realist Hyperland Minimal Desktop LTO & GPO version
+# RHMD - Realist Hyprland Minimal Desktop
 # package.license file -> /etc/portage/package.license
 
 # APP-EDITORS
@@ -451,9 +455,6 @@ app-editors/vscode Microsoft-vscode
 # APP-ARCH
 app-arch/rar RAR
 
-# DEV-UTIL
-dev-util/jetbrains-toolbox JetBrainsToolbox
-
 # MEDIA-FONTS
 media-fonts/corefonts MSttfEULA
 
@@ -461,7 +462,6 @@ media-fonts/corefonts MSttfEULA
 sys-kernel/linux-firmware linux-fw-redistributable no-source-code
 
 # WWW-CLIENT
-www-client/microsoft-edge-beta microsoft-edge
 www-client/microsoft-edge microsoft-edge
 ```
 

@@ -1,4 +1,4 @@
-# RHMD - Realist Hyprland Minimal Desktop
+# RHMD - Realist Hyperland Minimal Desktop LTO & GPO version
 # package.use file -> /etc/portage/package.use
 
 # APP-ADMIN
@@ -49,7 +49,6 @@ dev-vcs/git -perl
 
 # DEV-QT
 dev-qt/qtmultimedia widgets
-dev-qt/qtgui egl vulkan
 
 # GNOME-BASE
 gnome-base/gvfs cdda http udisks nfs archive

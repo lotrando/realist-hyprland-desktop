@@ -1,2 +1,2 @@
-# RHMD - Realist Hyprland Minimal Desktop
+# RHMD - Realist Hyperland Minimal Desktop LTO & GPO version
 # package.mask file -> /etc/portage/package.mask
