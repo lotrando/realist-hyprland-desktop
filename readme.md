@@ -4,13 +4,18 @@
 
 This project contains complete installation commands and config files for create gentoo linux with Hyperland desktop for Web Developers.
 
-## Final desktop screenshot
+## Final desktop One monitor screenshot
 
-<img src="" alt="hyprland-screen" />
+<img src="one_screen.jpg" alt="One Monitor Screen" />
+
+## Final desktop Dual monitor screenshot
+
+<img src="dual_screen.jpg" alt="Dual Monitor Screen" />
+
 
 ## Grub background
 
-<img src="" alt="grub-screen" />
+<img src="grub.jpg" alt="grub-screen" />
 
 ## Create install environment
 
