@@ -171,7 +171,7 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 # RHMD - Realist Hyprland Minimal Desktop
 # package.accept_keywords file -> /etc/portage/package.accept_keywords
 
-# APP-MISC [Hyprland]
+# APP-MISC [Hyprland] ! important
 app-misc/nwg-look ~amd64
 app-misc/nwg-shell-wallpapers ~amd64
 
@@ -184,8 +184,7 @@ dev-python/dasbus ~amd64
 dev-python/geographiclib ~amd64
 dev-python/i3ipc ~amd64
 
-# GUI-APPS [Hyprland]
-gui-apps/azote ~amd64
+# GUI-APPS [Hyprland] ! important
 gui-apps/hypridle ~amd64
 gui-apps/hyprlock ~amd64
 gui-apps/hyprpaper ~amd64
@@ -205,23 +204,23 @@ gui-apps/swaync ~amd64
 gui-apps/waybar ~amd64
 gui-apps/wlr-randr ~amd64
 
-# GUI-LIBS [Hyprland]
+# GUI-LIBS [Hyprland] ! important
 gui-libs/xdg-desktop-portal-hyprland ~amd64
 
-# GUI-WM [Hyprland]
+# GUI-WM [Hyprland] ! important
 gui-wm/hyprland-contrib ~amd64
 
 # SCI-GEOSCIENCES [Hyprland]
 sci-geosciences/geopy ~amd64
 
-# APP-EDITORS
+# APP-EDITORS ! important
 app-editors/sublime-text ~amd64
 app-editors/vscode ~amd64
 
-# APP-MISC
+# APP-MISC ! important
 app-misc/ca-certificates ~amd64
 
-# DEV-PHP
+# DEV-PHP ! important
 dev-php/ca-bundle ~amd64
 dev-php/composer ~amd64
 dev-php/json-schema ~amd64
@@ -245,33 +244,26 @@ dev-php/xdebug-handler ~amd64
 dev-python/python-lhafile ~amd64
 dev-python/sphinx ~amd64
 
-# SYS-KERNEL
+# SYS-KERNEL ! important
 sys-kernel/zen-sources ~amd64
 
-# APP-SHELLS
+# APP-SHELLS ! important
 app-shells/oh-my-zsh ~amd64
 app-shells/zsh-autosuggestions ~amd64
 app-shells/zsh-syntax-highlighting ~amd64
 
-# DEV-LANG
+# DEV-LANG ! important
 dev-lang/php ~amd64
 
 # DEV-UTIL
 dev-util/ragel ~amd64
 dev-util/colm ~amd64
 
-# GNOME-EXTRA
-gnome-extra/yad ~amd64
-
-# NET-MISC
-net-misc/youtube-viewer ~amd64
-
-# MEDIA-VIDEO
-media-video/obs-studio ~amd64
+# MEDIA-VIDEO ! important
 media-video/pipewire ~amd64
 media-video/wireplumber ~amd64
 
-# SYS-APSS
+# SYS-APSS ! important
 sys-apps/eza ~amd64
 
 # X11-APPS [Hyprland]
@@ -325,6 +317,7 @@ app-text/poppler cairo
 app-text/xmlto text
 
 # DEV-CPP
+# XORG [ XWayland ] --------------------
 dev-cpp/gtkmm X
 dev-cpp/cairomm X
 
@@ -346,7 +339,7 @@ dev-libs/libdbusmenu gtk3
 dev-python/PyQt5 -bluetooth dbus declarative gui multimedia network opengl printsupport svg widgets
 dev-python/pillow webp tiff
 
-# DEV-VCS
+# DEV-VCS ! important
 dev-vcs/git -perl
 
 # DEV-QT
@@ -355,9 +348,8 @@ dev-qt/qtmultimedia widgets
 # GNOME-BASE
 gnome-base/gvfs cdda http udisks nfs archive
 
-# GUI-APPS
+# GUI-APPS ! important
 gui-apps/rofi-wayland drun windowmode
-gui-apps/swaybg gdk-pixbuf
 gui-apps/waybar pulseaudio udev network tray upower wifi
 gui-apps/nwg hyprland
 
@@ -378,10 +370,12 @@ media-libs/flac ogg
 media-libs/gegl cairo
 media-libs/harfbuzz icu
 media-libs/libsdl opengl
-media-libs/libsdl2 X haptic opengl gles2
 media-libs/libsndfile minimal
 media-libs/libvpx postproc
-media-libs/mesa d3d9 lm-sensor
+# XORG [ XWayland ] --------------------
+media-libs/libsdl2 X haptic opengl gles2
+media-libs/mesa X d3d9 lm-sensor
+media-libs/libglvnd X
 
 # MEDIA-PLUGINS
 media-plugins/alsa-plugins pulseaudio
@@ -395,7 +389,7 @@ media-sound/pulseaudio alsa-plugin -bluetooth -daemon
 media-video/ffmpeg mp3 sdl svg truetype v4l opus vorbis webp x264 xvid
 media-video/pipewire sound-server v4l -bluetooth
 
-# NET-LIBS
+# NET-LIBS ! important
 net-libs/nodejs lto
 
 # NET-IM
@@ -407,13 +401,13 @@ net-misc/networkmanager modemmanager -bluetooth dhcpcd iptables lto resolvconf
 # NET-P2P
 net-p2p/transmission gtk -qt5 -qt6
 
-# SYS-BOOT
+# SYS-BOOT ! important
 sys-boot/grub mount
 
-# SYS-DEVEL
+# SYS-DEVEL ! important
 sys-devel/gcc graphite lto pgo
 
-# SYS-KERNEL
+# SYS-KERNEL ! important
 sys-kernel/linux-firmware initramfs
 sys-kernel/zen-sources symlink
 
@@ -423,14 +417,14 @@ sys-fs/squashfs-tools lz4 lzma lzo zstd
 # SYS-LIBS
 sys-libs/zlib minizip
 
-# WWW-CLIENT
+# WWW-CLIENT ! important
 www-client/firefox lto pgo
-www-client/microsoft-edge qt5
 
 # X11-LIBS
-x11-libs/cairo X
 x11-libs/libdrm video_cards_radeon
 x11-libs/motif xft
+# XORG [Xwayland] ----------------
+x11-libs/cairo X
 x11-libs/gtk+ wayland X
 x11-libs/libxkbcommon X
 x11-libs/pango X
@@ -446,7 +440,7 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 # RHMD - Realist Hyprland Minimal Desktop
 # package.license file -> /etc/portage/package.license
 
-# APP-EDITORS
+# APP-EDITORS ! important
 app-editors/sublime-text Sublime
 app-editors/vscode Microsoft-vscode
 
@@ -456,7 +450,7 @@ app-arch/rar RAR
 # MEDIA-FONTS
 media-fonts/corefonts MSttfEULA
 
-# SYS-KERNEL
+# SYS-KERNEL ! important
 sys-kernel/linux-firmware linux-fw-redistributable no-source-code
 
 # WWW-CLIENT
@@ -603,12 +597,16 @@ emerge -g genkernel linux-firmware zen-sources && genkernel all
 ### Install important system packages
 
 ```
-emerge hcpcd grub usbutils terminus-font sudo f2fs-tools app-misc/mc dev-vcs/git eselect-repository --noreplace nano
+emerge dhcpcd grub terminus-font sudo f2fs-tools dev-vcs/git eselect-repository
+```
+```
+eselect repository enable mv guru && emaint sync -r mv & emaint sync -r guru
+emerge --oneshot sys-apps/portage
+```
 
-eselect repository enable mv guru
-emaint sync -R mv guru
-
-emerge oh-my-zsh gentoo-zsh-completions zsh-completions
+### Desktop
+```
+emerge oh-my-zsh gentoo-zsh-completions zsh-completions usbutils app-misc/mc kitty hyprland --noreplace nano
 ```
 
 ### Install oh-my-zsh plugins and theme
@@ -616,11 +614,9 @@ emerge oh-my-zsh gentoo-zsh-completions zsh-completions
 ```
 git clone https://github.com/romkatv/powerlevel10k.git /usr/share/zsh/site-contrib/oh-my-zsh/custom/themes/powerlevel10k
 ```
-
 ```
 git clone https://github.com/zsh-users/zsh-autosuggestions.git /usr/share/zsh/site-contrib/oh-my-zsh/custom/plugins/zsh-autosuggestions
 ```
-
 ```
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zsh/site-contrib/oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 ```

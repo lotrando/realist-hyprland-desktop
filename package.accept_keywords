@@ -1,7 +1,7 @@
-# RHMD - Realist Hyperland Minimal Desktop LTO & GPO version
+# RHMD - Realist Hyprland Minimal Desktop
 # package.accept_keywords file -> /etc/portage/package.accept_keywords
 
-# APP-MISC [Hyprland]
+# APP-MISC [Hyprland] ! important
 app-misc/nwg-look ~amd64
 app-misc/nwg-shell-wallpapers ~amd64
 
@@ -14,8 +14,7 @@ dev-python/dasbus ~amd64
 dev-python/geographiclib ~amd64
 dev-python/i3ipc ~amd64
 
-# GUI-APPS [Hyprland]
-gui-apps/azote ~amd64
+# GUI-APPS [Hyprland] ! important
 gui-apps/hypridle ~amd64
 gui-apps/hyprlock ~amd64
 gui-apps/hyprpaper ~amd64
@@ -35,23 +34,23 @@ gui-apps/swaync ~amd64
 gui-apps/waybar ~amd64
 gui-apps/wlr-randr ~amd64
 
-# GUI-LIBS [Hyprland]
+# GUI-LIBS [Hyprland] ! important
 gui-libs/xdg-desktop-portal-hyprland ~amd64
 
-# GUI-WM [Hyprland]
+# GUI-WM [Hyprland] ! important
 gui-wm/hyprland-contrib ~amd64
 
 # SCI-GEOSCIENCES [Hyprland]
 sci-geosciences/geopy ~amd64
 
-# APP-EDITORS
+# APP-EDITORS ! important
 app-editors/sublime-text ~amd64
 app-editors/vscode ~amd64
 
-# APP-MISC
+# APP-MISC ! important
 app-misc/ca-certificates ~amd64
 
-# DEV-PHP
+# DEV-PHP ! important
 dev-php/ca-bundle ~amd64
 dev-php/composer ~amd64
 dev-php/json-schema ~amd64
@@ -75,33 +74,26 @@ dev-php/xdebug-handler ~amd64
 dev-python/python-lhafile ~amd64
 dev-python/sphinx ~amd64
 
-# SYS-KERNEL
+# SYS-KERNEL ! important
 sys-kernel/zen-sources ~amd64
 
-# APP-SHELLS
+# APP-SHELLS ! important
 app-shells/oh-my-zsh ~amd64
 app-shells/zsh-autosuggestions ~amd64
 app-shells/zsh-syntax-highlighting ~amd64
 
-# DEV-LANG
+# DEV-LANG ! important
 dev-lang/php ~amd64
 
 # DEV-UTIL
 dev-util/ragel ~amd64
 dev-util/colm ~amd64
 
-# GNOME-EXTRA
-gnome-extra/yad ~amd64
-
-# NET-MISC
-net-misc/youtube-viewer ~amd64
-
-# MEDIA-VIDEO
-media-video/obs-studio ~amd64
+# MEDIA-VIDEO ! important
 media-video/pipewire ~amd64
 media-video/wireplumber ~amd64
 
-# SYS-APSS
+# SYS-APSS ! important
 sys-apps/eza ~amd64
 
 # X11-APPS [Hyprland]

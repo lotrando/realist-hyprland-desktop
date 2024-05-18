@@ -1,7 +1,7 @@
-# RHMD - Realist Hyperland Minimal Desktop LTO & GPO version
+# RHMD - Realist Hyprland Minimal Desktop
 # package.license file -> /etc/portage/package.license
 
-# APP-EDITORS
+# APP-EDITORS ! important
 app-editors/sublime-text Sublime
 app-editors/vscode Microsoft-vscode
 
@@ -11,9 +11,8 @@ app-arch/rar RAR
 # MEDIA-FONTS
 media-fonts/corefonts MSttfEULA
 
-# SYS-KERNEL
+# SYS-KERNEL ! important
 sys-kernel/linux-firmware linux-fw-redistributable no-source-code
 
 # WWW-CLIENT
 www-client/microsoft-edge microsoft-edge
-
