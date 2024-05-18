@@ -131,3 +131,8 @@ x11-libs/libdrm video_cards_radeon
 x11-libs/motif xft
 x11-libs/gtk+ wayland X
 x11-libs/libxkbcommon X
+
+x11-libs/pango X
+app-crypt/gcr gtk
+media-libs/libsdl2 X
+dev-libs/libdbusmenu gtk3
