@@ -670,7 +670,7 @@ chsh -s /bin/zsh root && chsh -s /bin/zsh realist
 SSD or SATA Disk
 
 ```
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=XMONAD --recheck /dev/sda
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=HYPRLAND --recheck /dev/sda
 ```
 
 ```
