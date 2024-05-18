@@ -129,7 +129,7 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/ma
 # RHMD - Realist Hyperland Minimal Desktop LTO & GPO version
 # make.conf file (c) 2022 -> /etc/portage/make.conf
 
-USE="alsa dbus elogind jpeg libnotify png pulseaudio pipewire nls vulkan wayland -X"
+USE="alsa dbus elogind jpeg libnotify opengl png pulseaudio pipewire nls vulkan wayland -X"
 CPU_FLAGS_X86="aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1 sse4_2 ssse3"
 
 COMMON_FLAGS="-O2 -pipe -fomit-frame-pointer"
@@ -351,8 +351,6 @@ dev-vcs/git -perl
 
 # DEV-QT
 dev-qt/qtmultimedia widgets
-dev-qt/qtgui egl vulkan
-dev-qt/qtbase opengl
 
 # GNOME-BASE
 gnome-base/gvfs cdda http udisks nfs archive
