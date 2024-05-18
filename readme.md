@@ -8,11 +8,6 @@ This project contains complete installation commands and config files for create
 
 <img src="one_screen.png" alt="One Monitor Screen" />
 
-## Final desktop Dual monitor screenshot
-
-<img src="dual_screen.png" alt="Dual Monitor Screen" />
-
-
 ## Grub background
 
 <img src="grub.png" alt="grub-screen" />
