@@ -301,6 +301,137 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 ```
 # RHMD - Realist Hyperland Minimal Desktop LTO & GPO version
 # package.use file -> /etc/portage/package.use
+
+# APP-ADMIN
+app-admin/sudo -sendmail
+
+# APP-EDITORS
+app-editors/nano magic
+
+# APP-ESELECT
+app-eselect/eselect-php apache2 fpm
+
+# APP-MISC
+app-misc/mc nls -slang unicode gpm sftp
+
+# APP-TEXT
+app-text/evince djvu tiff
+app-text/ghostscript-gpl cups
+app-text/poppler cairo
+app-text/xmlto text
+
+# DEV-CPP
+dev-cpp/gtkmm X
+dev-cpp/cairomm X
+
+# DEV-DB
+dev-db/mysql -perl
+dev-db/sqlite tools
+
+# DEV-LANG
+dev-lang/php apache2 bcmath curl fpm gd mysql mysqli pdo soap sockets spell sqlite xmlreader xmlwriter zip
+dev-lang/python lto pgo
+
+# DEV-LIBS
+dev-libs/elfutils lzma zstd
+dev-libs/libxml2 icu
+dev-libs/sexp static-libs
+
+# DEV-PYTHON
+dev-python/PyQt5 -bluetooth dbus declarative gui multimedia network opengl printsupport svg widgets
+dev-python/pillow webp tiff
+
+# DEV-VCS
+dev-vcs/git -perl
+
+# DEV-QT
+dev-qt/qtmultimedia widgets
+dev-qt/qtbase opengl
+dev-qt/qtgui egl vulkan
+
+# GNOME-BASE
+gnome-base/gvfs cdda http udisks nfs archive
+
+# GUI-APPS
+gui-apps/rofi-wayland drun windowmode
+gui-apps/swaybg gdk-pixbuf
+gui-apps/waybar pulseaudio udev network tray upower wifi
+gui-apps/nwg hyprland
+
+# GUI-LIBS
+gui-libs/wlroots x11-backend tinywl
+gui-libs/gtk-layer-shell vala introspection
+
+# MEDIA-FONTS
+media-fonts/terminus-font -ru-g
+media-fonts/fontawesome ttf
+
+# MEDIA-GFX
+media-gfx/gimp jpeg2k jpegxl udev vector-icons webp wmf xpm
+media-gfx/imagemagick djvu lzma raw svg truetype zip xml
+media-gfx/inkscape exif imagemagick svg2
+
+# MEDIA-LIBS
+media-libs/audiofile flac
+media-libs/flac ogg
+media-libs/gegl cairo
+media-libs/harfbuzz icu
+media-libs/libsdl opengl
+media-libs/libsdl2 haptic opengl gles2
+media-libs/libsndfile minimal
+media-libs/libvpx postproc
+media-libs/mesa d3d9 lm-sensor wayland
+
+# MEDIA-PLUGINS
+media-plugins/alsa-plugins pulseaudio
+media-plugins/audacious-plugins aac cdda cue flac http lame libnotify modplug mp3 sndfile vorbis wavpack
+
+# MEDIA-SOUND
+media-sound/mpg123 -pulseaudio
+media-sound/pulseaudio alsa-plugin -bluetooth -daemon
+
+# MEDIA-VIDEO
+media-video/ffmpeg mp3 sdl svg truetype v4l opus vorbis webp x264 xvid
+media-video/pipewire sound-server v4l -bluetooth
+
+# NET-LIBS
+net-libs/nodejs lto
+
+# NET-IM
+net-im/qtox notification
+
+# NET-MISC
+net-misc/networkmanager modemmanager -bluetooth dhcpcd iptables lto resolvconf
+
+# NET-P2P
+net-p2p/transmission gtk -qt5 -qt6
+
+# SYS-BOOT
+sys-boot/grub mount
+
+# SYS-DEVEL
+sys-devel/gcc graphite lto pgo
+
+# SYS-KERNEL
+sys-kernel/linux-firmware initramfs
+sys-kernel/zen-sources symlink
+
+# SYS-FS
+sys-fs/squashfs-tools lz4 lzma lzo zstd
+
+# SYS-LIBS
+sys-libs/zlib minizip
+
+# WWW-CLIENT
+www-client/firefox lto pgo
+www-client/microsoft-edge qt5
+
+# X11-LIBS
+x11-libs/cairo X
+x11-libs/libdrm video_cards_radeon
+x11-libs/motif xft
+x11-libs/gtk+ wayland X
+x11-libs/libxkbcommon X
 ```
 
 ### Edit file - /etc/portage/package.license
