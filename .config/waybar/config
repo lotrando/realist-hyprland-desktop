@@ -8,8 +8,7 @@
         "hyprland/workspaces",
         "hyprland/window"
     ],
-    "modules-center": [
-    ],
+    "modules-center": [],
     "modules-right": [
         "network",
         "cpu",
@@ -20,19 +19,18 @@
         "keyboard-state",
         "custom/powermenu"
     ],
-"hyprland/workspaces": {
-      "all-outputs": false,
-      "persistent_workspaces": {
-        "*": 5,
-      }
+    "hyprland/workspaces": {
+        "all-outputs": false,
+        "persistent_workspaces": {
+            "*": 5
+        }
     },
     "custom/powermenu": {
         "format": " ",
         "on-click": "~/.config/rofi/scripts/powermenu",
-        "tooltip": false,
+        "tooltip": false
     },
-    "sway/mode": {
-    },
+    "sway/mode": {},
     "tray": {
         "icon-size": 16,
         "spacing": 5
@@ -61,7 +59,6 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
@@ -82,5 +79,5 @@
             ]
         },
         "on-click": "pavucontrol"
-    },
+    }
 }
