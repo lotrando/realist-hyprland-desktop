@@ -4,6 +4,9 @@
 # APP-ADMIN
 app-admin/sudo -sendmail
 
+# APP-CRYPT
+app-crypt/gcr gtk
+
 # APP-EDITORS
 app-editors/nano magic
 
@@ -35,6 +38,7 @@ dev-lang/python lto pgo
 dev-libs/elfutils lzma zstd
 dev-libs/libxml2 icu
 dev-libs/sexp static-libs
+dev-libs/libdbusmenu gtk3
 
 # DEV-PYTHON
 dev-python/PyQt5 -bluetooth dbus declarative gui multimedia network opengl printsupport svg widgets
@@ -45,7 +49,6 @@ dev-vcs/git -perl
 
 # DEV-QT
 dev-qt/qtmultimedia widgets
-dev-qt/qtbase opengl
 dev-qt/qtgui egl vulkan
 
 # GNOME-BASE
@@ -66,9 +69,7 @@ media-fonts/terminus-font -ru-g
 media-fonts/fontawesome ttf
 
 # MEDIA-GFX
-media-gfx/gimp jpeg2k jpegxl udev vector-icons webp wmf xpm
 media-gfx/imagemagick djvu lzma raw svg truetype zip xml
-media-gfx/inkscape exif imagemagick svg2
 
 # MEDIA-LIBS
 media-libs/audiofile flac
@@ -76,10 +77,10 @@ media-libs/flac ogg
 media-libs/gegl cairo
 media-libs/harfbuzz icu
 media-libs/libsdl opengl
-media-libs/libsdl2 haptic opengl gles2
+media-libs/libsdl2 X haptic opengl gles2
 media-libs/libsndfile minimal
 media-libs/libvpx postproc
-media-libs/mesa d3d9 lm-sensor wayland
+media-libs/mesa d3d9 lm-sensor
 
 # MEDIA-PLUGINS
 media-plugins/alsa-plugins pulseaudio
@@ -131,8 +132,6 @@ x11-libs/libdrm video_cards_radeon
 x11-libs/motif xft
 x11-libs/gtk+ wayland X
 x11-libs/libxkbcommon X
-
 x11-libs/pango X
-app-crypt/gcr gtk
-media-libs/libsdl2 X
-dev-libs/libdbusmenu gtk3
+
+

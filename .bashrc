@@ -40,11 +40,11 @@ ex ()
 alias cc="clear"
 alias df="df -h"
 alias mkd="mkdir -pv"
-alias ..="cd .."
 alias grep="grep --color=auto"
 alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
+alias nf="neofetch"
 
 # Changing "ls" to "exa"
 alias ls='eza -al --color=always --group-directories-first'
@@ -54,7 +54,9 @@ alias lt='eza -aT --color=always --group-directories-first'
 alias l.='eza -a | egrep "^\."'
 
 # Portage
-alias install="sudo emerge -av"
+alias pinstall="sudo emerge -av"
+alias premove="sudo emerge -av --unmerge"
+
 alias update="sudo emerge -uDU @world"
 alias clean="sudo emerge --depclean"
 alias sync="sudo emerge --sync"
@@ -77,6 +79,6 @@ alias newtag='git tag -a'
 # Laravel Artisan
 alias art='php artisan'
 alias server='art serve'
-alias route='art route:list'
-# PHP Storm
-___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+alias rlist='art route:list'
+alias model='art make:model'
+alias controller='art make:controller'

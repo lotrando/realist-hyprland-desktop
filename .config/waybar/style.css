@@ -9,8 +9,8 @@
 
 @keyframes blink_red {
   to {
-    background-color: rgb(242, 143, 173);
-    color: rgb(26, 24, 38);
+    background-color: #e06c75;
+    color: #000000;
   }
 }
 

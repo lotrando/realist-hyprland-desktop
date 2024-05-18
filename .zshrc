@@ -8,7 +8,6 @@ fi
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.config/rofi/scripts:$PATH
-#export XDG_RUNTIME_DIR=/run/user/$(id -u)
 export GTK_THEME=Adwaita-dark
 
 # Path to your oh-my-zsh installation.
@@ -114,11 +113,11 @@ ex ()
 alias cc="clear"
 alias df="df -h"
 alias mkd="mkdir -pv"
-alias ..="cd .."
 alias grep="grep --color=auto"
 alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
+alias nf="neofetch"
 
 # Changing "ls" to "exa"
 alias ls='eza -al --color=always --group-directories-first'
@@ -130,6 +129,7 @@ alias l.='eza -a | egrep "^\."'
 # Portage
 alias pinstall="sudo emerge -av"
 alias premove="sudo emerge -av --unmerge"
+
 alias update="sudo emerge -uDU @world"
 alias clean="sudo emerge --depclean"
 alias sync="sudo emerge --sync"

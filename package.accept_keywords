@@ -1,50 +1,55 @@
 # RHMD - Realist Hyprland Minimal Desktop
 # package.accept_keywords file -> /etc/portage/package.accept_keywords
 
-# Hyprland
-gui-apps/hyprlock ~amd64
-gui-apps/hypridle ~amd64
-gui-libs/xdg-desktop-portal-hyprland ~amd64
-gui-apps/hyprpaper ~amd64
-gui-apps/hyprpicker ~amd64
-gui-apps/waybar ~amd64
-gui-apps/swaync ~amd64
-gui-apps/rofi-wayland ~amd64
-gui-wm/hyprland-contrib ~amd64
-dev-cpp/sdbus-c++ ~amd64
-gui-apps/nwg ~amd64
+# APP-MISC [Hyprland]
 app-misc/nwg-look ~amd64
 app-misc/nwg-shell-wallpapers ~amd64
+
+# DEV-CPP [Hyprland]
+dev-cpp/sdbus-c++ ~amd64
+
+# DEV-PYTHON [Hyprland]
+dev-python/colorthief ~amd64
+dev-python/dasbus ~amd64
+dev-python/geographiclib ~amd64
+dev-python/i3ipc ~amd64
+
+# GUI-APPS [Hyprland]
+gui-apps/azote ~amd64
+gui-apps/hypridle ~amd64
+gui-apps/hyprlock ~amd64
+gui-apps/hyprpaper ~amd64
+gui-apps/hyprpicker ~amd64
+gui-apps/nwg ~amd64
 gui-apps/nwg-displays ~amd64
 gui-apps/nwg-dock ~amd64
+gui-apps/nwg-dock-hyprland ~amd64
 gui-apps/nwg-drawer ~amd64
 gui-apps/nwg-icon-picker ~amd64
 gui-apps/nwg-menu ~amd64
 gui-apps/nwg-panel ~amd64
 gui-apps/nwg-shell ~amd64
 gui-apps/nwg-shell-config ~amd64
-sci-geosciences/geopy ~amd64
-dev-python/geographiclib ~amd64
-dev-python/i3ipc ~amd64
-dev-python/dasbus ~amd64
+gui-apps/rofi-wayland ~amd64
+gui-apps/swaync ~amd64
+gui-apps/waybar ~amd64
 gui-apps/wlr-randr ~amd64
-x11-apps/xcur2png ~amd64
-gui-apps/nwg-dock-hyprland ~amd64
-gui-apps/azote ~amd64
-dev-python/colorthief ~amd64
+
+# GUI-LIBS [Hyprland]
+gui-libs/xdg-desktop-portal-hyprland ~amd64
+
+# GUI-WM [Hyprland]
+gui-wm/hyprland-contrib ~amd64
+
+# SCI-GEOSCIENCES [Hyprland]
+sci-geosciences/geopy ~amd64
 
 # APP-EDITORS
 app-editors/sublime-text ~amd64
 app-editors/vscode ~amd64
 
-# APP-EMULATORS
-app-emulation/fs-uae ~amd64
-app-emulation/fs-uae-launcher ~amd64
-
 # APP-MISC
-app-misc/radeontop ~amd64
 app-misc/ca-certificates ~amd64
-app-misc/ufetch ~amd64
 
 # DEV-PHP
 dev-php/ca-bundle ~amd64
@@ -84,7 +89,6 @@ dev-lang/php ~amd64
 # DEV-UTIL
 dev-util/ragel ~amd64
 dev-util/colm ~amd64
-dev-util/jetbrains-toolbox ~amd64
 
 # GNOME-EXTRA
 gnome-extra/yad ~amd64
@@ -97,14 +101,11 @@ media-video/obs-studio ~amd64
 media-video/pipewire ~amd64
 media-video/wireplumber ~amd64
 
-# MEDIA-TV
-media-tv/plex-media-server ~amd64
-
 # SYS-APSS
 sys-apps/eza ~amd64
 
-# WWW-CLIENT
-www-client/microsoft-edge ~amd64
+# X11-APPS [Hyprland]
+x11-apps/xcur2png ~amd64
 
 # X11-BASE
 x11-base/xcb-proto ~amd64
