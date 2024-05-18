@@ -2,7 +2,7 @@
 
 ## About this project
 
-This project contains complete installation commands and config files for create Gentoo linux with Hyperland [wlroots] desktop for Web Developers.
+This project contains complete installation commands and config files for create Gentoo linux with Hyperland desktop for Web Developers.
 
 ## Final desktop One monitor screenshot
 
