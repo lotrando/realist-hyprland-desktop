@@ -6,16 +6,16 @@ This project contains complete installation commands and config files for create
 
 ## Final desktop One monitor screenshot
 
-<img src="one_screen.jpg" alt="One Monitor Screen" />
+<img src="one_screen.png" alt="One Monitor Screen" />
 
 ## Final desktop Dual monitor screenshot
 
-<img src="dual_screen.jpg" alt="Dual Monitor Screen" />
+<img src="dual_screen.png" alt="Dual Monitor Screen" />
 
 
 ## Grub background
 
-<img src="grub.jpg" alt="grub-screen" />
+<img src="grub.png" alt="grub-screen" />
 
 ## Create install environment
 
