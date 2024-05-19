@@ -171,119 +171,6 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 ```
 # RHMD - Realist Hyprland Minimal Desktop
 # package.accept_keywords file -> /etc/portage/package.accept_keywords
-
-# APP-MISC [Hyprland] ! important
-app-misc/nwg-look ~amd64
-app-misc/nwg-shell-wallpapers ~amd64
-
-# DEV-CPP [Hyprland]
-dev-cpp/sdbus-c++ ~amd64
-
-# DEV-PYTHON [Hyprland]
-dev-python/colorthief ~amd64
-dev-python/dasbus ~amd64
-dev-python/geographiclib ~amd64
-dev-python/i3ipc ~amd64
-
-# GUI-APPS [Hyprland] ! important
-gui-apps/hypridle ~amd64
-gui-apps/hyprlock ~amd64
-gui-apps/hyprpaper ~amd64
-gui-apps/hyprpicker ~amd64
-gui-apps/nwg ~amd64
-gui-apps/nwg-displays ~amd64
-gui-apps/nwg-dock ~amd64
-gui-apps/nwg-dock-hyprland ~amd64
-gui-apps/nwg-drawer ~amd64
-gui-apps/nwg-icon-picker ~amd64
-gui-apps/nwg-menu ~amd64
-gui-apps/nwg-panel ~amd64
-gui-apps/nwg-shell ~amd64
-gui-apps/nwg-shell-config ~amd64
-gui-apps/rofi-wayland ~amd64
-gui-apps/swaync ~amd64
-gui-apps/waybar ~amd64
-gui-apps/wlr-randr ~amd64
-
-# GUI-LIBS [Hyprland] ! important
-gui-libs/xdg-desktop-portal-hyprland ~amd64
-
-# GUI-WM [Hyprland] ! important
-gui-wm/hyprland-contrib ~amd64
-
-# SCI-GEOSCIENCES [Hyprland]
-sci-geosciences/geopy ~amd64
-
-# APP-EDITORS ! important
-app-editors/sublime-text ~amd64
-app-editors/vscode ~amd64
-
-# APP-MISC ! important
-app-misc/ca-certificates ~amd64
-
-# DEV-PHP ! important
-dev-php/ca-bundle ~amd64
-dev-php/composer ~amd64
-dev-php/json-schema ~amd64
-dev-php/jsonlint ~amd64
-dev-php/metadata-minifier ~amd64
-dev-php/phar-utils ~amd64
-dev-php/php ~amd64
-dev-php/psr-log ~amd64
-dev-php/semver ~amd64
-dev-php/spdx-licenses ~amd64
-dev-php/symfony-config ~amd64
-dev-php/symfony-console ~amd64
-dev-php/symfony-dependency-injection ~amd64
-dev-php/symfony-event-dispatcher ~amd64
-dev-php/symfony-filesystem ~amd64
-dev-php/symfony-finder ~amd64
-dev-php/symfony-process ~amd64
-dev-php/xdebug-handler ~amd64
-
-# DEV-PYTHON
-dev-python/python-lhafile ~amd64
-dev-python/sphinx ~amd64
-
-# SYS-KERNEL ! important
-sys-kernel/zen-sources ~amd64
-
-# APP-SHELLS ! important
-app-shells/oh-my-zsh ~amd64
-app-shells/zsh-autosuggestions ~amd64
-app-shells/zsh-syntax-highlighting ~amd64
-
-# DEV-LANG ! important
-dev-lang/php ~amd64
-
-# DEV-UTIL
-dev-util/ragel ~amd64
-dev-util/colm ~amd64
-
-# MEDIA-VIDEO ! important
-media-video/pipewire ~amd64
-media-video/wireplumber ~amd64
-
-# SYS-APSS ! important
-sys-apps/eza ~amd64
-
-# X11-APPS [Hyprland]
-x11-apps/xcur2png ~amd64
-
-# X11-BASE
-x11-base/xcb-proto ~amd64
-
-# X11-LIBS
-x11-libs/libfm ~amd64
-x11-libs/libxcb ~amd64
-
-# X11-MISC
-x11-misc/notify-osd ~amd64
-x11-misc/pcmanfm ~amd64
-
-# X11-THEMES
-x11-themes/elementary-xfce-icon-theme ~amd64
-x11-themes/notify-osd-icons ~amd64
 ```
 
 ### File - /etc/portage/package.use
@@ -295,140 +182,6 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 ```
 # RHMD - Realist Hyprland Minimal Desktop
 # package.use file -> /etc/portage/package.use
-
-# APP-ADMIN
-app-admin/sudo -sendmail
-
-# APP-CRYPT
-app-crypt/gcr gtk
-
-# APP-EDITORS
-app-editors/nano magic
-
-# APP-ESELECT
-app-eselect/eselect-php apache2 fpm
-
-# APP-MISC
-app-misc/mc nls -slang unicode gpm sftp
-
-# APP-TEXT
-app-text/evince djvu tiff
-app-text/ghostscript-gpl cups
-app-text/poppler cairo
-app-text/xmlto text
-
-# DEV-CPP
-# XORG [ XWayland ] --------------------
-dev-cpp/gtkmm X
-dev-cpp/cairomm X
-
-# DEV-DB
-dev-db/mysql -perl
-dev-db/sqlite tools
-
-# DEV-LANG
-dev-lang/php apache2 bcmath curl fpm gd mysql mysqli pdo soap sockets spell sqlite xmlreader xmlwriter zip
-dev-lang/python lto pgo
-
-# DEV-LIBS
-dev-libs/elfutils lzma zstd
-dev-libs/libxml2 icu
-dev-libs/sexp static-libs
-dev-libs/libdbusmenu gtk3
-
-# DEV-PYTHON
-dev-python/PyQt5 -bluetooth dbus declarative gui multimedia network opengl printsupport svg widgets
-dev-python/pillow webp tiff
-
-# DEV-VCS ! important
-dev-vcs/git -perl
-
-# DEV-QT
-dev-qt/qtmultimedia widgets
-
-# GNOME-BASE
-gnome-base/gvfs cdda http udisks nfs archive
-
-# GUI-APPS ! important
-gui-apps/rofi-wayland drun windowmode
-gui-apps/waybar pulseaudio udev network tray upower wifi
-gui-apps/nwg hyprland
-
-# GUI-LIBS
-gui-libs/wlroots x11-backend tinywl
-gui-libs/gtk-layer-shell vala introspection
-
-# MEDIA-FONTS
-media-fonts/terminus-font -ru-g
-media-fonts/fontawesome ttf
-
-# MEDIA-GFX
-media-gfx/imagemagick djvu lzma raw svg truetype zip xml
-
-# MEDIA-LIBS
-media-libs/audiofile flac
-media-libs/flac ogg
-media-libs/gegl cairo
-media-libs/harfbuzz icu
-media-libs/libsdl opengl
-media-libs/libsndfile minimal
-media-libs/libvpx postproc
-# XORG [ XWayland ] --------------------
-media-libs/libsdl2 X haptic opengl gles2
-media-libs/mesa X d3d9 lm-sensor
-media-libs/libglvnd X
-
-# MEDIA-PLUGINS
-media-plugins/alsa-plugins pulseaudio
-media-plugins/audacious-plugins aac cdda cue flac http lame libnotify modplug mp3 sndfile vorbis wavpack
-
-# MEDIA-SOUND
-media-sound/mpg123 -pulseaudio
-media-sound/pulseaudio alsa-plugin -bluetooth -daemon
-
-# MEDIA-VIDEO
-media-video/ffmpeg mp3 sdl svg truetype v4l opus vorbis webp x264 xvid
-media-video/pipewire sound-server v4l -bluetooth
-
-# NET-LIBS ! important
-net-libs/nodejs lto
-
-# NET-IM
-net-im/qtox notification
-
-# NET-MISC
-net-misc/networkmanager modemmanager -bluetooth dhcpcd iptables lto resolvconf
-
-# NET-P2P
-net-p2p/transmission gtk -qt5 -qt6
-
-# SYS-BOOT ! important
-sys-boot/grub mount
-
-# SYS-DEVEL ! important
-sys-devel/gcc graphite lto pgo
-
-# SYS-KERNEL ! important
-sys-kernel/linux-firmware initramfs
-sys-kernel/zen-sources symlink
-
-# SYS-FS
-sys-fs/squashfs-tools lz4 lzma lzo zstd
-
-# SYS-LIBS
-sys-libs/zlib minizip
-
-# WWW-CLIENT ! important
-www-client/firefox lto pgo
-
-# X11-LIBS
-x11-libs/libdrm video_cards_radeon
-x11-libs/motif xft
-# XORG [Xwayland] ----------------
-x11-libs/cairo X
-x11-libs/gtk+ wayland X
-x11-libs/libxkbcommon X
-x11-libs/pango X
 ```
 
 ### Edit file - /etc/portage/package.license
@@ -440,22 +193,6 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 ```
 # RHMD - Realist Hyprland Minimal Desktop
 # package.license file -> /etc/portage/package.license
-
-# APP-EDITORS ! important
-app-editors/sublime-text Sublime
-app-editors/vscode Microsoft-vscode
-
-# APP-ARCH
-app-arch/rar RAR
-
-# MEDIA-FONTS
-media-fonts/corefonts MSttfEULA
-
-# SYS-KERNEL ! important
-sys-kernel/linux-firmware linux-fw-redistributable no-source-code
-
-# WWW-CLIENT
-www-client/microsoft-edge microsoft-edge
 ```
 
 ### Edit file - /etc/portage/package.mask
@@ -467,8 +204,6 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 ```
 # RHMD - Realist Hyperland Minimal Desktop LTO & GPO version
 # package.mask file -> /etc/portage/package.mask
-
-# // some custom masked package //
 ```
 
 ```
@@ -589,28 +324,19 @@ echo "realist:toor" | chpasswd -c SHA256
 
 ## Compiling phase
 
-### Create kernel ( ZEN Sources recommended )
-
-export XDG_RUNTIME_DIR=/run/user/$UID
-
+### Create kernel and install important system packages ( ZEN Sources )
 
 ```
-emerge -g genkernel linux-firmware zen-sources && genkernel all
+emerge dhcpcd grub terminus-font sudo f2fs-tools dev-vcs/git eselect-repository genkernel linux-firmware zen-sources && genkernel all
 ```
 
-### Install important system packages
+### Add repository overlay mv for OH-MY-ZSH
 
 ```
-emerge dhcpcd grub terminus-font sudo f2fs-tools dev-vcs/git eselect-repository
+eselect repository enable mv && emaint sync -r mv && emerge --oneshot sys-apps/portage
 ```
 ```
-eselect repository enable mv guru && emaint sync -r mv & emaint sync -r guru
-emerge --oneshot sys-apps/portage
-```
-
-### Desktop
-```
-emerge oh-my-zsh gentoo-zsh-completions zsh-completions usbutils app-misc/mc kitty hyprland --noreplace nano
+emerge oh-my-zsh gentoo-zsh-completions zsh-completions
 ```
 
 ### Install oh-my-zsh plugins and theme
@@ -625,6 +351,14 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git /usr/share/zsh/si
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zsh/site-contrib/oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 ```
 
+## Desktop
+```
+eselect repository enable mv && emaint sync -r guru
+```
+```
+emerge btop pciutils usbutils app-misc/mc kitty hyprland hyprpaper hyprpicker waybar --noreplace nano
+```
+
 ## Configurations
 
 ### Grub
@@ -632,7 +366,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zs
 ```
 nano /etc/default/grub
 ```
-
 ```
 GRUB_GFXMODE=1920x1080x32
 GRUB_GFXPAYLOAD_LINUX=keep
@@ -653,7 +386,6 @@ sed -i 's/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/g' /etc/sudoers
 ```
 cd /home/realist
 ```
-
 ```
 chown -R realist:realist /home/realist/
 ```
@@ -668,11 +400,9 @@ chsh -s /bin/zsh root && chsh -s /bin/zsh realist
 ```
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=HYPRLAND --recheck /dev/sda
 ```
-
 ```
 cd /boot/grub && wget -q wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/grub.png
 ```
-
 ```
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
@@ -682,24 +412,13 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ```
 rc-update add elogind boot && rc-update add consolefont default && rc-update add numlock default
 ```
-
 ```
 rc-update add sshd default && rc-update add dbus default && rc-update add alsasound default
 ```
-
 ```
 rc-update add dhcpcd default
 ```
 
-```
-rc-update add NetworkManager default
-```
-
-### Store volume
-
-```
-alsactl store
-```
 
 ### Cleaning and reboot to Xmonad desktop
 
