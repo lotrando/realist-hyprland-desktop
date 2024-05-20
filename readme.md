@@ -356,7 +356,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zs
 eselect repository enable mv && emaint sync -r guru
 ```
 ```
-emerge btop pciutils usbutils app-misc/mc kitty hyprland hyprpaper hyprpicker waybar --noreplace nano
+emerge btop audacious nwg-look pciutils usbutils app-misc/mc kitty hyprland hyprpaper hyprpicker hyperland-contrib grim slurp waybar nwg-look nwg-displays --noreplace nano
 ```
 
 ## Configurations
