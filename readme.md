@@ -327,7 +327,7 @@ echo "realist:toor" | chpasswd -c SHA256
 ### Create kernel and install important system packages ( ZEN Sources )
 
 ```
-emerge dhcpcd grub terminus-font sudo f2fs-tools dev-vcs/git eselect-repository genkernel linux-firmware zen-sources && genkernel all
+emerge dhcpcd grub terminus-font sudo f2fs-tools dev-vcs/git btop pciutils usbutils app-misc/mc eselect-repository genkernel linux-firmware zen-sources --noreplace nano && genkernel all
 ```
 
 ### Add repository overlay mv for OH-MY-ZSH
@@ -353,10 +353,13 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zs
 
 ## Desktop
 ```
-eselect repository enable mv && emaint sync -r guru
+eselect repository enable guru && emaint sync -r guru
 ```
 ```
-emerge btop audacious nwg-look pciutils usbutils app-misc/mc kitty hyprland hyprpaper hyprpicker hyperland-contrib grim slurp waybar nwg-look nwg-displays gui-libs/gtk-layer-shell dev-python/pygobject --noreplace nano
+emerge kitty hyprland hyprpaper hyprpicker hyperland-contrib grim slurp waybar 
+```
+```
+emerge audacious nwg-look nwg-displays gui-libs/gtk-layer-shell
 ```
 
 ## Configurations
