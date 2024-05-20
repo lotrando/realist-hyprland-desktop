@@ -6,11 +6,11 @@ This project contains complete installation commands and config files for create
 
 ## Final desktop - One monitor screenshot
 
-<img src="one_screen.png" alt="One Monitor Screen" />
+<img src="screen.png" alt="One Monitor Screenshot" />
 
 ## Grub Screen
 
-<img src="grub.png" alt="grub-screen" />
+<img src="grub.png" alt="GRUB Screenshot" />
 
 ## Create install environment
 
