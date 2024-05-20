@@ -1,4 +1,4 @@
-# Realist's Hyprland Minimalistic Desktop [ RHMD ] on Gentoo Linux
+# Realist's Hyprland Minimal Desktop [RHMD] on Gentoo Linux
 
 ## About this project
 
