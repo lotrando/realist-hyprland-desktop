@@ -356,7 +356,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zs
 eselect repository enable guru && emaint sync -r guru
 ```
 ```
-emerge kitty hyprland hyprpaper hyprpicker hyperland-contrib grim slurp waybar 
+emerge kitty hyprland hyprpaper hyprpicker hyprland-contrib grim slurp waybar xwayland
 ```
 ```
 emerge audacious nwg-look nwg-displays gui-libs/gtk-layer-shell
