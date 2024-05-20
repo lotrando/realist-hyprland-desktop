@@ -127,10 +127,10 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/ma
 ```
 
 ```
-# RHMD - Realist Hyperland Minimal Desktop LTO & GPO version
+# RHMD - Realist Hyprland Minimal Desktop
 # make.conf file (c) 2022 -> /etc/portage/make.conf
 
-USE="dbus elogind pipewire nls vulkan wayland -X"
+USE="alsa dbus elogind pulseaudio pipewire nls vulkan wayland -X"
 CPU_FLAGS_X86="aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1 sse4_2 ssse3"
 
 COMMON_FLAGS="-O2 -pipe -fomit-frame-pointer"
@@ -147,7 +147,7 @@ DISTDIR="/var/cache/distfiles"
 PKGDIR="/var/cache/binpkgs"
 PORTAGE_NICENESS=19
 PORTAGE_IONICE_COMMAND="ionice -c 3 -p \${PID}"
-EMERGE_DEFAULT_OPTS="-v --ask-enter-invalid --jobs=1 --load-average=6"
+EMERGE_DEFAULT_OPTS="-v --ask-enter-invalid --jobs=2 --load-average=6"
 FEATURES="downgrade-backup parallel-fetch sign"
 
 ACCEPT_KEYWORDS="amd64"
@@ -171,6 +171,63 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 ```
 # RHMD - Realist Hyprland Minimal Desktop
 # package.accept_keywords file -> /etc/portage/package.accept_keywords
+
+# APP-MISC
+app-misc/nwg-look ~amd64
+
+# DEV-CPP
+dev-cpp/sdbus-c++ ~amd64
+
+# DEV-PYTHON
+dev-python/colorthief ~amd64
+dev-python/dasbus ~amd64
+dev-python/geographiclib ~amd64
+dev-python/i3ipc ~amd64
+
+# GUI-APPS [Hyprland] ! important
+gui-apps/hypridle ~amd64
+gui-apps/hyprlock ~amd64
+gui-apps/hyprpaper ~amd64
+gui-apps/hyprpicker ~amd64
+gui-apps/nwg ~amd64
+gui-apps/nwg-displays ~amd64
+gui-apps/nwg-dock ~amd64
+gui-apps/nwg-dock-hyprland ~amd64
+gui-apps/nwg-drawer ~amd64
+gui-apps/nwg-icon-picker ~amd64
+gui-apps/nwg-menu ~amd64
+gui-apps/nwg-panel ~amd64
+gui-apps/nwg-shell ~amd64
+gui-apps/nwg-shell-config ~amd64
+gui-apps/rofi-wayland ~amd64
+gui-apps/waybar ~amd64
+
+# GUI-LIBS [Hyprland] ! important
+gui-libs/xdg-desktop-portal-hyprland ~amd64
+
+# GUI-WM [Hyprland] ! important
+gui-wm/hyprland-contrib ~amd64
+
+# APP-MISC ! important
+app-misc/ca-certificates ~amd64
+
+# SYS-KERNEL ! important
+sys-kernel/zen-sources ~amd64
+
+# APP-SHELLS ! important
+app-shells/oh-my-zsh ~amd64
+app-shells/zsh-autosuggestions ~amd64
+app-shells/zsh-syntax-highlighting ~amd64
+
+# MEDIA-VIDEO ! important
+media-video/pipewire ~amd64
+media-video/wireplumber ~amd64
+
+# SYS-APSS
+sys-apps/eza ~amd64
+
+# X11-THEMES
+x11-themes/elementary-xfce-icon-theme ~amd64
 ```
 
 ### File - /etc/portage/package.use
@@ -182,6 +239,132 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 ```
 # RHMD - Realist Hyprland Minimal Desktop
 # package.use file -> /etc/portage/package.use
+
+# APP-ADMIN
+app-admin/sudo -sendmail
+
+# APP-ARCH
+app-arch/libarchive lzo
+
+# APP-CRYPT
+app-crypt/gcr gtk
+
+# APP-EDITORS
+app-editors/nano magic
+
+# APP-MISC
+app-misc/mc nls -slang unicode gpm sftp
+
+# APP-TEXT
+app-text/evince djvu tiff
+app-text/ghostscript-gpl cups
+app-text/poppler cairo
+app-text/xmlto text
+
+# DEV-LIBS
+dev-libs/elfutils lzma zstd
+dev-libs/libdbusmenu gtk3
+
+# DEV-PYTHON
+dev-python/PyQt5 -bluetooth dbus declarative gui multimedia network opengl printsupport svg widgets
+dev-python/pillow webp tiff
+
+# DEV-VCS
+dev-vcs/git -perl
+dev-qt/qtmultimedia widgets
+
+# GNOME-BASE
+gnome-base/gvfs cdda http udisks nfs archive
+
+# GUI-APPS
+gui-apps/rofi-wayland drun windowmode
+gui-apps/waybar pulseaudio udev network tray upower wifi
+gui-apps/nwg hyprland
+
+# GUI-LIBS
+gui-libs/wlroots x11-backend tinywl
+gui-libs/gtk-layer-shell vala introspection
+
+# MEDIA-FONTS
+media-fonts/terminus-font -ru-g
+media-fonts/fontawesome ttf
+
+# MEDIA-GFX
+media-gfx/imagemagick djvu lzma raw svg truetype zip xml
+
+# MEDIA-LIBS
+media-libs/audiofile flac
+media-libs/flac ogg
+media-libs/gegl cairo
+media-libs/harfbuzz icu
+media-libs/libsdl opengl
+media-libs/libsndfile minimal
+media-libs/libvpx postproc
+
+# MEDIA-PLUGINS
+media-plugins/alsa-plugins pulseaudio
+media-plugins/audacious-plugins aac cdda cue flac http lame libnotify modplug mp3 sndfile vorbis wavpack
+
+# MEDIA-SOUND
+media-sound/mpg123 -pulseaudio
+media-sound/pulseaudio alsa-plugin -bluetooth -daemon
+
+# MEDIA-VIDEO
+media-video/ffmpeg mp3 sdl svg truetype v4l opus vorbis webp x264 xvid
+media-video/pipewire sound-server v4l -bluetooth
+
+# NET-LIBS
+#net-libs/nodejs lto
+
+# SYS-BOOT ! important
+sys-boot/grub mount
+
+# SYS-DEVEL
+#sys-devel/gcc graphite lto pgo
+
+# SYS-FS
+sys-fs/f2fs-tools lz4
+
+# SYS-KERNEL
+sys-kernel/linux-firmware initramfs
+sys-kernel/zen-sources symlink
+
+# SYS-LIBS
+sys-libs/zlib minizip
+
+# WWW-CLIENT
+#www-client/firefox lto pgo
+
+# X11-LIBS
+x11-libs/libdrm video_cards_radeon
+
+## Wayland X libs
+
+# DEV-CPP
+dev-cpp/gtkmm X
+dev-cpp/cairomm X
+
+# GUI-WM
+gui-wm/hyprland X
+
+# GUI-LIBS
+gui-libs/wlroots X
+
+# X11-LIBS
+x11-libs/gtk+ X
+x11-libs/libxkbcommon X
+x11-libs/pango X
+x11-libs/cairo X
+
+# SYS-APPS
+sys-apps/dbus X
+
+# MEDIA-LIBS
+media-libs/libsdl2 X haptic opengl gles2
+media-libs/mesa X d3d9 lm-sensor
+media-libs/libglvnd X
+media-libs/tiff jpeg
+media-libs/libepoxy X
 ```
 
 ### Edit file - /etc/portage/package.license
@@ -193,6 +376,9 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 ```
 # RHMD - Realist Hyprland Minimal Desktop
 # package.license file -> /etc/portage/package.license
+
+# SYS-KERNEL
+sys-kernel/linux-firmware linux-fw-redistributable no-source-code
 ```
 
 ### Edit file - /etc/portage/package.mask
@@ -324,10 +510,15 @@ echo "realist:toor" | chpasswd -c SHA256
 
 ## Compiling phase
 
-### Create kernel and install important system packages ( ZEN Sources )
+### Recompile compilers [ enable LTO GPO ] - Not Important
+```
+emerge gcc python rust clang
+```
+
+### Create zen-kernel and install important system packages 
 
 ```
-emerge dhcpcd grub terminus-font sudo f2fs-tools dev-vcs/git btop pciutils usbutils app-misc/mc eselect-repository genkernel linux-firmware zen-sources --noreplace nano && genkernel all
+emerge neofetch eix gentoolkit dhcpcd grub terminus-font eza sudo f2fs-tools dev-vcs/git btop pciutils usbutils app-misc/mc eselect-repository genkernel linux-firmware zen-sources --noreplace nano && genkernel all
 ```
 
 ### Add repository overlay mv for OH-MY-ZSH
@@ -356,10 +547,76 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zs
 eselect repository enable guru && emaint sync -r guru
 ```
 ```
-emerge kitty hyprland hyprpaper hyprpicker hyprland-contrib grim slurp waybar xwayland
+emerge kitty hyprland hyprpaper hyprpicker hyprland-contrib xdg-desktop-portal-hyprland grim slurp waybar xwayland nwg-look
 ```
 ```
-emerge audacious nwg-look nwg-displays gui-libs/gtk-layer-shell
+emerge imagemagick ubuntu-font-family gnome-themes-standard elementary-xfce-icon-theme rofi-wayland qt5ct adwaita-qt nm-applet thunar pipewire roboto file-roller ristretto firefox mpv audacious pulsemixer
+```
+
+### Install WEB developers packages ( optional )
+
+```
+emerge phpmyadmin dev-db/mysql dev-lang/php nodejs composer vscode sublime-text
+```
+
+### Set PHP version for CLI and APACHE
+
+```
+eselect php set cli php8.2 && eselect php set apache2 php8.2
+```
+
+### Config WEB Develop enviroment PHP, APACHE, MYSQL, PHPMYADMIN
+
+```
+rm -R /usr/lib/tmpfiles.d/mysql.conf
+```
+
+```
+echo "d /run/mysqld 0755 mysql mysql -" > /usr/lib/tmpfiles.d/mysql.conf
+```
+
+```
+sed -i 's/SSL_DEFAULT_VHOST/PHP/g' /etc/conf.d/apache2
+```
+
+```
+echo "ServerName localhost" >> /etc/apache2/httpd.conf
+```
+
+```
+rm -R /var/www/localhost/htdocs/index.html && echo "<?php phpinfo(); ?>" > /var/www/localhost/htdocs/index.php
+```
+
+```
+cp /var/www/localhost/htdocs/phpmyadmin/config.sample.inc.php /var/www/localhost/htdocs/phpmyadmin/config.inc.php
+```
+
+```
+mkdir /var/www/localhost/htdocs/phpmyadmin/tmp/
+```
+
+```
+chown -R apache:apache /var/www/ && usermod -aG apache realist
+```
+
+```
+chmod -R 775 /var/www/localhost/htdocs && chmod -R 777 /var/www/localhost/htdocs/phpmyadmin/tmp
+```
+
+### Add Blowfish secret to phpmyadmin
+
+```
+nano /var/www/localhost/htdocs/phpmyadmin/config.inc.php
+```
+
+```
+$cfg['blowfish_secret'] = 'WntN0150l71sLq/{w4V0:ZXFv7WcB-Qz';
+```
+
+### Mysql root password
+
+```
+emerge --config mysql
 ```
 
 ## Configurations
