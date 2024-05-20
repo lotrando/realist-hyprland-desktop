@@ -2,15 +2,13 @@
 
 ## About this project
 
-This project contains complete installation commands and config files for create Gentoo
-linux with Hyperland desktop. This desktop is intended for web developers, but it can 
-also be used by a regular user.
+This project contains complete installation commands and config files for create Gentoo linux with Hyperland desktop. This desktop is intended for web developers, but it can also be used by a regular user.
 
-## Final desktop One monitor screenshot
+## Final desktop - One monitor screenshot
 
 <img src="one_screen.png" alt="One Monitor Screen" />
 
-## Grub background
+## Grub Screen
 
 <img src="grub.png" alt="grub-screen" />
 
