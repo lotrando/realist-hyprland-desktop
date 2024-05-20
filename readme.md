@@ -678,7 +678,7 @@ rc-update add dhcpcd default
 ```
 
 
-### Cleaning and reboot to Xmonad desktop
+### Cleaning and reboot to Hyprland desktop
 
 ```
 cd / && umount -R /mnt/gentoo && reboot
@@ -695,10 +695,9 @@ cd / && umount -R /mnt/gentoo && reboot
 | Win-Shift-c         | Kill focused window                                      |
 | Win-Enter           | Run Kitty                                                |
 | Win-Alt-b           | Run Firefox                                              |
-| Win-Alt-e           | Run Sublime                                              |
-| Win-Alt-f           | Run Pcmanfm                                              |
+| Win-Alt-e           | Run Sublime Text                                         |
+| Win-Alt-f           | Run Thunar                                               |
 | Win-Alt-t           | Run Btop                                                 |
-| Win-Alt-m           | Run Pulsemixer                                           |
 | Win-j               | Shrink vert window width                                 |
 | Win-m               | Move focus to the master window                          |
 | Win-Up              | Move focus to the next window                            |
