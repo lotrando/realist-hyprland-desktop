@@ -417,7 +417,7 @@ sed -i 's/default8x16/ter-v16b/g' /etc/conf.d/consolefont
 ```
 
 ```
-sed -i 's/us/cs/g' /etc/conf.d/keymaps
+sed -i 's/us/cz/g' /etc/conf.d/keymaps
 ```
 
 ```
