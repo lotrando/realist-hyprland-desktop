@@ -46,7 +46,7 @@ dev-python/PyQt5 -bluetooth dbus declarative gui multimedia network opengl print
 dev-python/pillow webp tiff
 
 # QT-GUI
-dev-qt/qtgui egl
+dev-qt/qtgui X egl
 
 # DEV-VCS ! important
 dev-vcs/git -perl
