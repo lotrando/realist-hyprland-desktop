@@ -346,6 +346,9 @@ dev-cpp/cairomm X
 # GUI-WM
 gui-wm/hyprland X
 
+# QT-GUI
+dev-qt/qtgui egl
+
 # GUI-LIBS
 gui-libs/wlroots X
 
