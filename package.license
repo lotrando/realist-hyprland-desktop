@@ -1,18 +1,9 @@
 # RHMD - Realist Hyprland Minimal Desktop
 # package.license file -> /etc/portage/package.license
 
-# APP-EDITORS ! important
-app-editors/sublime-text Sublime
+# APP-EDITORS
 app-editors/vscode Microsoft-vscode
+app-editors/sublime-text Sublime
 
-# APP-ARCH
-app-arch/rar RAR
-
-# MEDIA-FONTS
-media-fonts/corefonts MSttfEULA
-
-# SYS-KERNEL ! important
+# SYS-KERNEL
 sys-kernel/linux-firmware linux-fw-redistributable no-source-code
-
-# WWW-CLIENT
-www-client/microsoft-edge microsoft-edge
