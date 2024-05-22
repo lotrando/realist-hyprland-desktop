@@ -129,7 +129,7 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/ma
 # RHMD - Realist Hyprland Minimal Desktop
 # make.conf file (c) 2022 -> /etc/portage/make.conf
 
-USE="alsa dbus elogind pulseaudio pipewire nls vulkan wayland -X"
+USE="alsa dbus elogind jpeg png pulseaudio pipewire nls vulkan wayland X"
 CPU_FLAGS_X86="aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1 sse4_2 ssse3"
 
 COMMON_FLAGS="-O2 -pipe -fomit-frame-pointer"
@@ -146,7 +146,7 @@ DISTDIR="/var/cache/distfiles"
 PKGDIR="/var/cache/binpkgs"
 PORTAGE_NICENESS=19
 PORTAGE_IONICE_COMMAND="ionice -c 3 -p \${PID}"
-EMERGE_DEFAULT_OPTS="-v --ask-enter-invalid --jobs=2 --load-average=6"
+EMERGE_DEFAULT_OPTS="-v --ask-enter-invalid --jobs=1 --load-average=6"
 FEATURES="downgrade-backup parallel-fetch sign"
 
 ACCEPT_KEYWORDS="amd64"
@@ -171,44 +171,54 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 # RHMD - Realist Hyprland Minimal Desktop
 # package.accept_keywords file -> /etc/portage/package.accept_keywords
 
-# APP-MISC
+# APP-MISC - nwg-look
 app-misc/nwg-look ~amd64
 
-# DEV-CPP
+# DEV-CPP [Hyprland]
 dev-cpp/sdbus-c++ ~amd64
 
-# DEV-PYTHON
-dev-python/colorthief ~amd64
-dev-python/dasbus ~amd64
-dev-python/geographiclib ~amd64
-dev-python/i3ipc ~amd64
-
-# GUI-APPS [Hyprland] ! important
+# GUI-APPS
 gui-apps/hypridle ~amd64
 gui-apps/hyprlock ~amd64
 gui-apps/hyprpaper ~amd64
 gui-apps/hyprpicker ~amd64
-gui-apps/nwg ~amd64
 gui-apps/nwg-displays ~amd64
-gui-apps/nwg-dock ~amd64
-gui-apps/nwg-dock-hyprland ~amd64
-gui-apps/nwg-drawer ~amd64
-gui-apps/nwg-icon-picker ~amd64
-gui-apps/nwg-menu ~amd64
-gui-apps/nwg-panel ~amd64
-gui-apps/nwg-shell ~amd64
-gui-apps/nwg-shell-config ~amd64
 gui-apps/rofi-wayland ~amd64
 gui-apps/waybar ~amd64
+gui-apps/wlr-randr ~amd64
 
-# GUI-LIBS [Hyprland] ! important
+# GUI-LIBS
 gui-libs/xdg-desktop-portal-hyprland ~amd64
 
-# GUI-WM [Hyprland] ! important
+# GUI-WM
 gui-wm/hyprland-contrib ~amd64
+
+# APP-EDITORS ! important
+app-editors/sublime-text ~amd64
+app-editors/vscode ~amd64
 
 # APP-MISC ! important
 app-misc/ca-certificates ~amd64
+
+# DEV-PHP ! important
+dev-php/ca-bundle ~amd64
+dev-php/composer ~amd64
+dev-php/json-schema ~amd64
+dev-php/jsonlint ~amd64
+dev-php/metadata-minifier ~amd64
+dev-php/phar-utils ~amd64
+dev-php/php ~amd64
+dev-php/psr-log ~amd64
+dev-php/semver ~amd64
+dev-php/spdx-licenses ~amd64
+dev-php/symfony-config ~amd64
+dev-php/symfony-console ~amd64
+dev-php/symfony-dependency-injection ~amd64
+dev-php/symfony-event-dispatcher ~amd64
+dev-php/symfony-filesystem ~amd64
+dev-php/symfony-finder ~amd64
+dev-php/symfony-process ~amd64
+dev-php/xdebug-handler ~amd64
 
 # SYS-KERNEL ! important
 sys-kernel/zen-sources ~amd64
@@ -218,6 +228,9 @@ app-shells/oh-my-zsh ~amd64
 app-shells/zsh-autosuggestions ~amd64
 app-shells/zsh-syntax-highlighting ~amd64
 
+# DEV-LANG ! important
+dev-lang/php ~amd64
+
 # MEDIA-VIDEO ! important
 media-video/pipewire ~amd64
 media-video/wireplumber ~amd64
@@ -225,7 +238,10 @@ media-video/wireplumber ~amd64
 # SYS-APSS
 sys-apps/eza ~amd64
 
-# X11-THEMES
+# X11-APPS - nwg-look
+x11-apps/xcur2png ~amd64
+
+# X11-THEMES - nwg-look
 x11-themes/elementary-xfce-icon-theme ~amd64
 ```
 
@@ -239,134 +255,62 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 # RHMD - Realist Hyprland Minimal Desktop
 # package.use file -> /etc/portage/package.use
 
-# APP-ADMIN
-app-admin/sudo -sendmail
-
-# APP-ARCH
-app-arch/libarchive lzo
-
 # APP-CRYPT
 app-crypt/gcr gtk
 
-# APP-EDITORS
-app-editors/nano magic
+# APP-ESELECT
+app-eselect/eselect-php fpm
 
 # APP-MISC
 app-misc/mc nls -slang unicode gpm sftp
 
+# DEV-LANG
+dev-lang/php curl mysqli fpm
+
 # APP-TEXT
-app-text/evince djvu tiff
-app-text/ghostscript-gpl cups
-app-text/poppler cairo
 app-text/xmlto text
 
 # DEV-LIBS
-dev-libs/elfutils lzma zstd
 dev-libs/libdbusmenu gtk3
 
-# DEV-PYTHON
-dev-python/PyQt5 -bluetooth dbus declarative gui multimedia network opengl printsupport svg widgets
-dev-python/pillow webp tiff
+# DEV-QT
+dev-qt/qtgui egl
 
 # DEV-VCS
 dev-vcs/git -perl
-dev-qt/qtmultimedia widgets
-
-# GNOME-BASE
-gnome-base/gvfs cdda http udisks nfs archive
 
 # GUI-APPS
 gui-apps/rofi-wayland drun windowmode
 gui-apps/waybar pulseaudio udev network tray upower wifi
-gui-apps/nwg hyprland
 
 # GUI-LIBS
-gui-libs/wlroots x11-backend tinywl
-gui-libs/gtk-layer-shell vala introspection
+gui-libs/wlroots x11-backend
 
 # MEDIA-FONTS
 media-fonts/terminus-font -ru-g
-media-fonts/fontawesome ttf
-
-# MEDIA-GFX
-media-gfx/imagemagick djvu lzma raw svg truetype zip xml
 
 # MEDIA-LIBS
-media-libs/audiofile flac
-media-libs/flac ogg
-media-libs/gegl cairo
-media-libs/harfbuzz icu
-media-libs/libsdl opengl
-media-libs/libsndfile minimal
-media-libs/libvpx postproc
+media-libs/libsdl2 gles2
 
 # MEDIA-PLUGINS
-media-plugins/alsa-plugins pulseaudio
-media-plugins/audacious-plugins aac cdda cue flac http lame libnotify modplug mp3 sndfile vorbis wavpack
+media-plugins/audacious-plugins -alsa nls -pulseaudio pipewire cdda cue ffmpeg flac http lame libnotify modplug mp3 opus sndfile wavpack
 
 # MEDIA-SOUND
-media-sound/mpg123 -pulseaudio
 media-sound/pulseaudio alsa-plugin -bluetooth -daemon
 
 # MEDIA-VIDEO
-media-video/ffmpeg mp3 sdl svg truetype v4l opus vorbis webp x264 xvid
 media-video/pipewire sound-server v4l -bluetooth
+media-video/ffmpeg mp3 v4l webp
 
-# NET-LIBS
-#net-libs/nodejs lto
-
-# SYS-BOOT ! important
+# SYS-BOOT
 sys-boot/grub mount
-
-# SYS-DEVEL
-#sys-devel/gcc graphite lto pgo
-
-# SYS-FS
-sys-fs/f2fs-tools lz4
 
 # SYS-KERNEL
 sys-kernel/linux-firmware initramfs
 sys-kernel/zen-sources symlink
 
-# SYS-LIBS
-sys-libs/zlib minizip
-
-# WWW-CLIENT
-#www-client/firefox lto pgo
-
 # X11-LIBS
 x11-libs/libdrm video_cards_radeon
-
-## Wayland X libs
-
-# DEV-CPP
-dev-cpp/gtkmm X
-dev-cpp/cairomm X
-
-# GUI-WM
-gui-wm/hyprland X
-
-# QT-GUI
-dev-qt/qtgui X egl
-
-# GUI-LIBS
-gui-libs/wlroots X
-
-# X11-LIBS
-x11-libs/gtk+ X
-x11-libs/libxkbcommon X
-x11-libs/pango X
-x11-libs/cairo X
-
-# SYS-APPS
-sys-apps/dbus X
-
-# MEDIA-LIBS
-media-libs/libsdl2 X haptic opengl gles2
-media-libs/mesa X d3d9 lm-sensor
-media-libs/libglvnd X
-media-libs/tiff jpeg
-media-libs/libepoxy X
 ```
 
 ### Edit file - /etc/portage/package.license
@@ -378,6 +322,10 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 ```
 # RHMD - Realist Hyprland Minimal Desktop
 # package.license file -> /etc/portage/package.license
+
+# APP-EDITORS
+app-editors/vscode Microsoft-vscode
+app-editors/sublime-text Sublime
 
 # SYS-KERNEL
 sys-kernel/linux-firmware linux-fw-redistributable no-source-code
