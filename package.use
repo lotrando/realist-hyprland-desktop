@@ -45,6 +45,9 @@ dev-libs/libdbusmenu gtk3
 dev-python/PyQt5 -bluetooth dbus declarative gui multimedia network opengl printsupport svg widgets
 dev-python/pillow webp tiff
 
+# QT-GUI
+dev-qt/qtgui egl
+
 # DEV-VCS ! important
 dev-vcs/git -perl
 
