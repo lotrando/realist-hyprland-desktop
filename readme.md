@@ -466,7 +466,7 @@ emerge gcc python rust clang
 ```
 
 ### Create zen-kernel and install important system packages 
-97 packages
+298 packages
 ```
 emerge neofetch eix gentoolkit dhcpcd grub terminus-font eza sudo f2fs-tools dev-vcs/git btop pciutils usbutils app-misc/mc eselect-repository genkernel linux-firmware zen-sources --noreplace nano && genkernel all
 ```
