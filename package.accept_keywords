@@ -1,47 +1,27 @@
 # RHMD - Realist Hyprland Minimal Desktop
 # package.accept_keywords file -> /etc/portage/package.accept_keywords
 
-# APP-MISC [Hyprland] ! important
+# APP-MISC - nwg-look
 app-misc/nwg-look ~amd64
-app-misc/nwg-shell-wallpapers ~amd64
 
 # DEV-CPP [Hyprland]
 dev-cpp/sdbus-c++ ~amd64
 
-# DEV-PYTHON [Hyprland]
-dev-python/colorthief ~amd64
-dev-python/dasbus ~amd64
-dev-python/geographiclib ~amd64
-dev-python/i3ipc ~amd64
-
-# GUI-APPS [Hyprland] ! important
+# GUI-APPS
 gui-apps/hypridle ~amd64
 gui-apps/hyprlock ~amd64
 gui-apps/hyprpaper ~amd64
 gui-apps/hyprpicker ~amd64
-gui-apps/nwg ~amd64
 gui-apps/nwg-displays ~amd64
-gui-apps/nwg-dock ~amd64
-gui-apps/nwg-dock-hyprland ~amd64
-gui-apps/nwg-drawer ~amd64
-gui-apps/nwg-icon-picker ~amd64
-gui-apps/nwg-menu ~amd64
-gui-apps/nwg-panel ~amd64
-gui-apps/nwg-shell ~amd64
-gui-apps/nwg-shell-config ~amd64
 gui-apps/rofi-wayland ~amd64
-gui-apps/swaync ~amd64
 gui-apps/waybar ~amd64
 gui-apps/wlr-randr ~amd64
 
-# GUI-LIBS [Hyprland] ! important
+# GUI-LIBS
 gui-libs/xdg-desktop-portal-hyprland ~amd64
 
-# GUI-WM [Hyprland] ! important
+# GUI-WM
 gui-wm/hyprland-contrib ~amd64
-
-# SCI-GEOSCIENCES [Hyprland]
-sci-geosciences/geopy ~amd64
 
 # APP-EDITORS ! important
 app-editors/sublime-text ~amd64
@@ -70,10 +50,6 @@ dev-php/symfony-finder ~amd64
 dev-php/symfony-process ~amd64
 dev-php/xdebug-handler ~amd64
 
-# DEV-PYTHON
-dev-python/python-lhafile ~amd64
-dev-python/sphinx ~amd64
-
 # SYS-KERNEL ! important
 sys-kernel/zen-sources ~amd64
 
@@ -85,31 +61,15 @@ app-shells/zsh-syntax-highlighting ~amd64
 # DEV-LANG ! important
 dev-lang/php ~amd64
 
-# DEV-UTIL
-dev-util/ragel ~amd64
-dev-util/colm ~amd64
-
 # MEDIA-VIDEO ! important
 media-video/pipewire ~amd64
 media-video/wireplumber ~amd64
 
-# SYS-APSS ! important
+# SYS-APSS
 sys-apps/eza ~amd64
 
-# X11-APPS [Hyprland]
+# X11-APPS - nwg-look
 x11-apps/xcur2png ~amd64
 
-# X11-BASE
-x11-base/xcb-proto ~amd64
-
-# X11-LIBS
-x11-libs/libfm ~amd64
-x11-libs/libxcb ~amd64
-
-# X11-MISC
-x11-misc/notify-osd ~amd64
-x11-misc/pcmanfm ~amd64
-
-# X11-THEMES
+# X11-THEMES - nwg-look
 x11-themes/elementary-xfce-icon-theme ~amd64
-x11-themes/notify-osd-icons ~amd64
