@@ -652,5 +652,4 @@ cd / && umount -R /mnt/gentoo && reboot
 | Win-Right.          | Switch focus to next monitor                             |
 | Win-Left,           | Switch focus to prev monitor                             |
 | Win-t               | Toggle floating window back to tile                      |
-| Win-Tab             | Switch to next layout                                    |
 | Win-Space           | Toggles noborder/full                                    |
