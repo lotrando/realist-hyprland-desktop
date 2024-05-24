@@ -251,20 +251,12 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 # RHMD - Realist Hyprland Minimal Desktop
 # package.use file -> /etc/portage/package.use
 
-# APP-CRYPT
-app-crypt/gcr gtk
-
-# APP-ESELECT
-app-eselect/eselect-php fpm
-
 # APP-MISC
 app-misc/mc nls -slang unicode gpm sftp
 
-# DEV-LANG
-dev-lang/php curl mysqli fpm
-
-# APP-TEXT
-app-text/xmlto text
+# DEV-CPP
+dev-cpp/gtkmm X
+dev-cpp/cairomm X
 
 # DEV-LIBS
 dev-libs/libdbusmenu gtk3
@@ -277,19 +269,21 @@ dev-vcs/git -perl
 
 # GUI-APPS
 gui-apps/rofi-wayland drun windowmode
-gui-apps/waybar pulseaudio udev network tray upower wifi
+gui-apps/waybar X pulseaudio udev network tray upower wifi
 
 # GUI-LIBS
-gui-libs/wlroots x11-backend
+gui-libs/wlroots X x11-backend
 
 # MEDIA-FONTS
 media-fonts/terminus-font -ru-g
 
 # MEDIA-LIBS
 media-libs/libsdl2 gles2
+media-libs/libglvnd X
+media-libs/vulkan-loader X
 
 # MEDIA-PLUGINS
-media-plugins/audacious-plugins -alsa nls -pulseaudio pipewire cdda cue ffmpeg flac http lame libnotify modplug mp3 opus sndfile wavpack
+media-plugins/audacious-plugins nls pipewire cdda cue ffmpeg flac http lame libnotify modplug mp3 opus sndfile wavpack
 
 # MEDIA-SOUND
 media-sound/pulseaudio alsa-plugin -bluetooth -daemon
@@ -297,6 +291,8 @@ media-sound/pulseaudio alsa-plugin -bluetooth -daemon
 # MEDIA-VIDEO
 media-video/pipewire sound-server v4l -bluetooth
 media-video/ffmpeg mp3 v4l webp
+media-video/mpv cdda dvd jpeg
+media-video/ffmpeg bzip2 dav1d encode gnutls gpl iconv mp3 network pic postproc threads v4l vulkan webp zlib modplug opus svg x264 x265 xvid
 
 # SYS-BOOT
 sys-boot/grub mount
@@ -307,6 +303,10 @@ sys-kernel/zen-sources symlink
 
 # X11-LIBS
 x11-libs/libdrm video_cards_radeon
+x11-libs/gtk+ X
+x11-libs/cairo X
+x11-libs/libxkbcommon X
+x11-libs/pango X
 ```
 
 ### Edit file - /etc/portage/package.license
