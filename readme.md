@@ -15,8 +15,6 @@ This project contains complete installation commands and config files for create
 ## Create install environment
 
 ### Partitions
-SSD / SATA Disk
-
 ```
 parted -s /dev/sda mklabel gpt && parted -a optimal /dev/sda
 ```
@@ -32,8 +30,6 @@ mkpart primary 150 -1
 name 2 ROOT
 quit
 ```
-
-SSD or SATA disk (Virtualbox)
 
 ```
 mkfs.fat -n UEFI -F32 /dev/sda1 && mkfs.f2fs -l ROOT -O extra_attr,inode_checksum,sb_checksum -f /dev/sda2
@@ -129,7 +125,7 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/ma
 # RHMD - Realist Hyprland Minimal Desktop
 # make.conf file (c) 2022 -> /etc/portage/make.conf
 
-USE="alsa dbus elogind jpeg png pulseaudio pipewire nls vulkan wayland X"
+USE="dbus elogind pipewire nls vulkan wayland ltp pgo graphite"
 CPU_FLAGS_X86="aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1 sse4_2 ssse3"
 
 COMMON_FLAGS="-O2 -pipe -fomit-frame-pointer"
@@ -444,20 +440,6 @@ cd /etc/init.d/
 ln -s net.lo net.enp0s3
 ```
 
-### Create user (replace realist and toor with custom user and password)
-
-```
-useradd -m -G audio,video,usb,cdrom,portage,users,wheel -s /bin/bash realist
-```
-
-```
-echo "root:toor" | chpasswd -c SHA256
-```
-
-```
-echo "realist:toor" | chpasswd -c SHA256
-```
-
 ## Compiling phase
 
 ### Recompile compilers [ enable LTO GPO ] - Not Important
@@ -466,9 +448,23 @@ emerge gcc python rust clang
 ```
 
 ### Create zen-kernel and install important system packages 
-298 packages
+59 packages
 ```
-emerge neofetch eix gentoolkit dhcpcd grub terminus-font eza sudo f2fs-tools dev-vcs/git btop pciutils usbutils app-misc/mc eselect-repository genkernel linux-firmware zen-sources --noreplace nano && genkernel all
+emerge seatd dhcpcd grub terminus-font sudo f2fs-tools dev-vcs/git eselect-repository genkernel linux-firmware zen-sources --noreplace nano && genkernel all
+```
+
+### Create user (replace realist and toor with custom user and password)
+
+```
+useradd -m -G audio,video,usb,cdrom,portage,users,wheel,seat -s /bin/bash realist
+```
+
+```
+echo "root:toor" | chpasswd -c SHA256
+```
+
+```
+echo "realist:toor" | chpasswd -c SHA256
 ```
 
 ### Add repository overlay mv for OH-MY-ZSH
@@ -497,10 +493,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zs
 eselect repository enable guru && emaint sync -r guru
 ```
 ```
-emerge kitty hyprland hyprpaper hyprpicker hyprland-contrib xdg-desktop-portal-hyprland grim slurp waybar xwayland nwg-look
+emerge hyprland hyprpaper hyprpicker hyprland-contrib xdg-desktop-portal-hyprland waybar xwayland
 ```
 ```
-emerge imagemagick ubuntu-font-family gnome-themes-standard elementary-xfce-icon-theme rofi-wayland qt5ct adwaita-qt nm-applet thunar pipewire roboto file-roller ristretto firefox mpv audacious pulsemixer
+emerge grim slurp neofetch eix gentoolkit kitty imagemagick ubuntu-font-family gnome-themes-standard elementary-xfce-icon-theme rofi-wayland qt5ct adwaita-qt pipewire firefox-bin mpv audacious nwg-look pulsemixer
 ```
 
 ### Install WEB developers packages ( optional )
@@ -625,7 +621,7 @@ rc-update add elogind boot && rc-update add consolefont default && rc-update add
 rc-update add sshd default && rc-update add dbus default && rc-update add alsasound default
 ```
 ```
-rc-update add dhcpcd default
+rc-update add dhcpcd default && rc-update add seatd default
 ```
 
 
@@ -647,7 +643,7 @@ cd / && umount -R /mnt/gentoo && reboot
 | Win-Enter           | Run Kitty                                                |
 | Win-Alt-b           | Run Firefox                                              |
 | Win-Alt-e           | Run Sublime Text                                         |
-| Win-Alt-f           | Run Thunar                                               |
+| Win-Alt-f           | Run PCManFM                                              |
 | Win-Alt-t           | Run Btop                                                 |
 | Win-j               | Shrink vert window width                                 |
 | Win-m               | Move focus to the master window                          |
