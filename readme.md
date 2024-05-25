@@ -432,6 +432,10 @@ ln -s net.lo net.enp0s3
 emerge gcc python rust clang
 ```
 
+```
+emerge -NDU @world
+```
+
 ### Create zen-kernel and install important system packages 
 59 packages
 ```
