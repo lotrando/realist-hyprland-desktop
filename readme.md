@@ -122,10 +122,9 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/ma
 ```
 
 ```
-# RHMD - Realist Hyprland Minimal Desktop
-# make.conf file (c) 2022 -> /etc/portage/make.conf
+# RXMD - Realist Xmonad Minimal Desktop - make.conf file (c) 2024 -> /etc/portage/make.conf
 
-USE="dbus elogind pipewire nls vulkan wayland ltp pgo graphite"
+USE="dbus elogind pipewire nls vulkan wayland"
 CPU_FLAGS_X86="aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1 sse4_2 ssse3"
 
 COMMON_FLAGS="-O2 -pipe -fomit-frame-pointer"
@@ -164,13 +163,15 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 ```
 
 ```
-# RHMD - Realist Hyprland Minimal Desktop
-# package.accept_keywords file -> /etc/portage/package.accept_keywords
+# RHMD - Realist Hyprland Minimal Desktop - package.accept_keywords file -> /etc/portage/package.accept_keywords
 
-# APP-MISC - nwg-look
+# APP-EDITORS
+app-editors/sublime-text ~amd64
+
+# APP-MISC
 app-misc/nwg-look ~amd64
 
-# DEV-CPP [Hyprland]
+# DEV-CPP
 dev-cpp/sdbus-c++ ~amd64
 
 # GUI-APPS
@@ -178,7 +179,6 @@ gui-apps/hypridle ~amd64
 gui-apps/hyprlock ~amd64
 gui-apps/hyprpaper ~amd64
 gui-apps/hyprpicker ~amd64
-gui-apps/nwg-displays ~amd64
 gui-apps/rofi-wayland ~amd64
 gui-apps/waybar ~amd64
 gui-apps/wlr-randr ~amd64
@@ -189,32 +189,8 @@ gui-libs/xdg-desktop-portal-hyprland ~amd64
 # GUI-WM
 gui-wm/hyprland-contrib ~amd64
 
-# APP-EDITORS ! important
-app-editors/sublime-text ~amd64
-app-editors/vscode ~amd64
-
 # APP-MISC ! important
 app-misc/ca-certificates ~amd64
-
-# DEV-PHP ! important
-dev-php/ca-bundle ~amd64
-dev-php/composer ~amd64
-dev-php/json-schema ~amd64
-dev-php/jsonlint ~amd64
-dev-php/metadata-minifier ~amd64
-dev-php/phar-utils ~amd64
-dev-php/php ~amd64
-dev-php/psr-log ~amd64
-dev-php/semver ~amd64
-dev-php/spdx-licenses ~amd64
-dev-php/symfony-config ~amd64
-dev-php/symfony-console ~amd64
-dev-php/symfony-dependency-injection ~amd64
-dev-php/symfony-event-dispatcher ~amd64
-dev-php/symfony-filesystem ~amd64
-dev-php/symfony-finder ~amd64
-dev-php/symfony-process ~amd64
-dev-php/xdebug-handler ~amd64
 
 # SYS-KERNEL ! important
 sys-kernel/zen-sources ~amd64
@@ -223,9 +199,6 @@ sys-kernel/zen-sources ~amd64
 app-shells/oh-my-zsh ~amd64
 app-shells/zsh-autosuggestions ~amd64
 app-shells/zsh-syntax-highlighting ~amd64
-
-# DEV-LANG ! important
-dev-lang/php ~amd64
 
 # MEDIA-VIDEO ! important
 media-video/pipewire ~amd64
@@ -248,15 +221,10 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 ```
 
 ```
-# RHMD - Realist Hyprland Minimal Desktop
-# package.use file -> /etc/portage/package.use
+# RHMD - Realist Hyprland Minimal Desktop - package.use file -> /etc/portage/package.use
 
 # APP-MISC
 app-misc/mc nls -slang unicode gpm sftp
-
-# DEV-CPP
-dev-cpp/gtkmm X
-dev-cpp/cairomm X
 
 # DEV-LIBS
 dev-libs/libdbusmenu gtk3
@@ -269,18 +237,21 @@ dev-vcs/git -perl
 
 # GUI-APPS
 gui-apps/rofi-wayland drun windowmode
-gui-apps/waybar X pulseaudio udev network tray upower wifi
+gui-apps/waybar pulseaudio udev network tray upower wifi
 
 # GUI-LIBS
-gui-libs/wlroots X x11-backend
+gui-libs/wlroots x11-backend X
+
+# GUI-WM
+gui-wm/hyprland X
 
 # MEDIA-FONTS
 media-fonts/terminus-font -ru-g
 
 # MEDIA-LIBS
 media-libs/libsdl2 gles2
-media-libs/libglvnd X
-media-libs/vulkan-loader X
+media-libs/libglvnd
+media-libs/vulkan-loader
 
 # MEDIA-PLUGINS
 media-plugins/audacious-plugins nls pipewire cdda cue ffmpeg flac http lame libnotify modplug mp3 opus sndfile wavpack
@@ -303,10 +274,26 @@ sys-kernel/zen-sources symlink
 
 # X11-LIBS
 x11-libs/libdrm video_cards_radeon
-x11-libs/gtk+ X
+
+#media-libs/freetype -X
+#app-misc/mc -X
+#media-fonts/liberation-fonts -X
+#media-fonts/terminus-font -X
+#media-fonts/ubuntu-font-family -X
+#media-video/pipewire -X
+#media-libs/libpulse -X
+
+dev-cpp/cairomm X
+dev-cpp/gtkmm X
+
 x11-libs/cairo X
-x11-libs/libxkbcommon X
-x11-libs/pango X
+x11-libs/gtk+ X
+
+dev-qt/qtbase opengl
+dev-qt/qttools opengl
+
+app-crypt/pinentry X
+sys-apps/dbus X
 ```
 
 ### Edit file - /etc/portage/package.license
@@ -316,8 +303,7 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 ```
 
 ```
-# RHMD - Realist Hyprland Minimal Desktop
-# package.license file -> /etc/portage/package.license
+# RHMD - Realist Hyprland Minimal Desktop - package.license file -> /etc/portage/package.license
 
 # APP-EDITORS
 app-editors/vscode Microsoft-vscode
@@ -334,8 +320,7 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 ```
 
 ```
-# RHMD - Realist Hyperland Minimal Desktop LTO & GPO version
-# package.mask file -> /etc/portage/package.mask
+# RHMD - Realist Hyperland Minimal Desktop - package.mask file -> /etc/portage/package.mask
 ```
 
 ```
