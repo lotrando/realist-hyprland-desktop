@@ -445,7 +445,7 @@ emerge seatd dhcpcd grub terminus-font sudo f2fs-tools dev-vcs/git eselect-repos
 ### Create user (replace realist and toor with custom user and password)
 
 ```
-useradd -m -G audio,video,usb,cdrom,portage,users,wheel,seat -s /bin/bash realist
+useradd -m -G audio,video,usb,cdrom,portage,users,wheel -s /bin/bash realist
 ```
 
 ```
