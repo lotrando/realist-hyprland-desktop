@@ -1,5 +1,4 @@
-# RHMD - Realist Hyprland Minimal Desktop
-# package.license file -> /etc/portage/package.license
+# RHMD - Realist Hyprland Minimal Desktop - package.license file -> /etc/portage/package.license
 
 # APP-EDITORS
 app-editors/vscode Microsoft-vscode
