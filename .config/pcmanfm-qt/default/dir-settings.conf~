@@ -1,0 +1,9 @@
+[/home/realist]
+SortOrder=ascending
+SortColumn=name
+ViewMode=compact
+ShowHidden=true
+SortFolderFirst=true
+SortHiddenLast=false
+SortCaseSensitive=false
+Recursive=true

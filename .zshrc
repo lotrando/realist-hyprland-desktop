@@ -9,6 +9,9 @@ fi
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.config/rofi/scripts:$PATH
 export GTK_THEME=Adwaita-dark
+export XDG_RUNTIME_DIR=/run/user/1000
+export LANG="cs_CZ.UTF-8"
+export LC_COLLATE="C.UTF-8"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/usr/share/zsh/site-contrib/oh-my-zsh"
@@ -118,6 +121,8 @@ alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
 alias nf="neofetch"
+
+alias code="vscode --ozone-platform=wayland"
 
 # Changing "ls" to "exa"
 alias ls='eza -al --color=always --group-directories-first'

@@ -82,6 +82,7 @@ tooltip label {
 #memory,
 #temperature,
 #cpu,
+#disk,
 #mpd,
 #idle_inhibitor,
 #temperature,
@@ -103,12 +104,12 @@ tooltip label {
   color: #e5c07b;
 }
 
-#clock {
-  color: rgb(217, 224, 238);
+#disk {
+  color: #61afef;
 }
 
-#idle_inhibitor {
-  color: rgb(221, 182, 242);
+#clock {
+  color: #c678dd;
 }
 
 #temperature {

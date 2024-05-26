@@ -13,9 +13,10 @@
         "network",
         "cpu",
         "memory",
+        "disk",
         "pulseaudio",
-        "tray",
         "clock",
+        "tray",
         "keyboard-state",
         "custom/powermenu"
     ],
@@ -36,17 +37,22 @@
         "spacing": 5
     },
     "clock": {
-        "tooltip-format": "{:%H:%M}",
-        "tooltip": true,
-        "format-alt": "{:%A, %B %d, %Y}",
-        "format": "{:%H:%M}"
+        "tooltip-format": "{calendar}",
+        "format": " {:%H:%M}",
+        "format-alt": " {:%d.%m.%Y}",
+        "interval": 1
+    },
+    "disk": {
+        "interval": 30,
+        "format": "󰋊 HDD:{free}",
+        "unit": "GB"
     },
     "cpu": {
-        "format": "󰻠 {usage}%",
-        "tooltip": false
+        "format": " CPU:{usage}%",
+        "tooltip": true
     },
     "memory": {
-        "format": " {}%",
+        "format": "󰘚 RAM:{}%",
         "tooltip": true
     },
     "network": {
@@ -56,14 +62,14 @@
         "tooltip-format": "󰈀 Network",
         "format-linked": "{ifname} (No IP) 󰈀",
         "format-disconnected": " Disconnected",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "󰈀 {ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        "format": "{volume}% {icon} {format_source}",
+        "format": "{icon} {volume}% {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
+        "format-source": " {volume}%",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
