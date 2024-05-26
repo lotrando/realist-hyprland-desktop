@@ -1,5 +1,4 @@
-# RHMD - Realist Hyprland Minimal Desktop
-# package.accept_keywords file -> /etc/portage/package.accept_keywords
+# RHMD - Realist Hyprland Minimal Desktop - package.accept_keywords file -> /etc/portage/package.accept_keywords
 
 # APP-EDITORS
 app-editors/sublime-text ~amd64
