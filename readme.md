@@ -124,7 +124,7 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/ma
 ```
 # RXMD - Realist Xmonad Minimal Desktop - make.conf file (c) 2024 -> /etc/portage/make.conf
 
-USE="dbus elogind pipewire nls vulkan wayland"
+USE="dbus elogind pipewire nls vulkan wayland -X -bluetooth -perl"
 CPU_FLAGS_X86="aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1 sse4_2 ssse3"
 
 COMMON_FLAGS="-O2 -pipe -fomit-frame-pointer"
@@ -173,6 +173,29 @@ app-misc/nwg-look ~amd64
 
 # DEV-CPP
 dev-cpp/sdbus-c++ ~amd64
+
+# DEV-LANG
+dev-lang/php ~amd64
+
+# DEV-PHP
+dev-php/ca-bundle ~amd64
+dev-php/composer ~amd64
+dev-php/json-schema ~amd64
+dev-php/jsonlint ~amd64
+dev-php/metadata-minifier ~amd64
+dev-php/phar-utils ~amd64
+dev-php/php ~amd64
+dev-php/psr-log ~amd64
+dev-php/semver ~amd64
+dev-php/spdx-licenses ~amd64
+dev-php/symfony-config ~amd64
+dev-php/symfony-console ~amd64
+dev-php/symfony-dependency-injection ~amd64
+dev-php/symfony-event-dispatcher ~amd64
+dev-php/symfony-filesystem ~amd64
+dev-php/symfony-finder ~amd64
+dev-php/symfony-process ~amd64
+dev-php/xdebug-handler ~amd64
 
 # GUI-APPS
 gui-apps/hypridle ~amd64
@@ -223,24 +246,45 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 ```
 # RHMD - Realist Hyprland Minimal Desktop - package.use file -> /etc/portage/package.use
 
+# APP-ARCH
+app-arch/xz-utils pgo
+
+# APP-CRYPT
+app-crypt/gcr gtk
+
+# APP-ESELECT
+app-eselect/eselect-php apache2 fpm
+
 # APP-MISC
-app-misc/mc nls -slang unicode gpm sftp
+app-misc/mc -slang unicode gpm sftp
+
+# DEV-LANG
+dev-lang/php apache2 bcmath curl fpm gd mysql mysqli pdo soap sockets spell sqlite xmlreader xmlwriter zip
+
+# APP-TEXT
+app-text/xmlto text
+
+# DEV-CPP
+dev-cpp/gtkmm X
+dev-cpp/cairomm X
+
+# DEV-LANG
+dev-lang/python pgo
 
 # DEV-LIBS
 dev-libs/libdbusmenu gtk3
 
 # DEV-QT
-dev-qt/qtgui egl
-
-# DEV-VCS
-dev-vcs/git -perl
+dev-qt/qtgui egl X
+dev-qt/qtbase opengl
+dev-qt/qttools opengl
 
 # GUI-APPS
 gui-apps/rofi-wayland drun windowmode
 gui-apps/waybar pulseaudio udev network tray upower wifi
 
 # GUI-LIBS
-gui-libs/wlroots x11-backend X
+gui-libs/wlroots X tinywl x11-backend
 
 # GUI-WM
 gui-wm/hyprland X
@@ -249,24 +293,26 @@ gui-wm/hyprland X
 media-fonts/terminus-font -ru-g
 
 # MEDIA-LIBS
-media-libs/libsdl2 gles2
-media-libs/libglvnd
-media-libs/vulkan-loader
+media-libs/libvpx postproc
+media-libs/libglvnd X
+media-libs/libepoxy X
+media-libs/libsdl2 gles2 X
+media-libs/mesa X
 
 # MEDIA-PLUGINS
-media-plugins/audacious-plugins nls pipewire cdda cue ffmpeg flac http lame libnotify modplug mp3 opus sndfile wavpack
-
-# MEDIA-SOUND
-media-sound/pulseaudio alsa-plugin -bluetooth -daemon
+media-plugins/audacious-plugins -alsa nls -pulseaudio pipewire cdda cue ffmpeg flac http lame libnotify modplug mp3 opus sndfile wavpack
 
 # MEDIA-VIDEO
 media-video/pipewire sound-server v4l -bluetooth
-media-video/ffmpeg mp3 v4l webp
+media-video/ffmpeg modplug mp3 opus pulseaudio svg v4l openh264 libv4l x264 x265 xvid
 media-video/mpv cdda dvd jpeg
-media-video/ffmpeg bzip2 dav1d encode gnutls gpl iconv mp3 network pic postproc threads v4l vulkan webp zlib modplug opus svg x264 x265 xvid
 
 # SYS-BOOT
 sys-boot/grub mount
+
+# SYS-DEVEL
+sys-devel/binutils pgo
+sys-devel/gcc graphite lto pgo
 
 # SYS-KERNEL
 sys-kernel/linux-firmware initramfs
@@ -274,26 +320,10 @@ sys-kernel/zen-sources symlink
 
 # X11-LIBS
 x11-libs/libdrm video_cards_radeon
-
-#media-libs/freetype -X
-#app-misc/mc -X
-#media-fonts/liberation-fonts -X
-#media-fonts/terminus-font -X
-#media-fonts/ubuntu-font-family -X
-#media-video/pipewire -X
-#media-libs/libpulse -X
-
-dev-cpp/cairomm X
-dev-cpp/gtkmm X
-
 x11-libs/cairo X
 x11-libs/gtk+ X
-
-dev-qt/qtbase opengl
-dev-qt/qttools opengl
-
-app-crypt/pinentry X
-sys-apps/dbus X
+x11-libs/libxkbcommon X
+x11-libs/pango X
 ```
 
 ### Edit file - /etc/portage/package.license
