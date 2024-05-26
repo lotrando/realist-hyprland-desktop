@@ -10,8 +10,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.config/rofi/scripts:$PATH
 export GTK_THEME=Adwaita-dark
 export XDG_RUNTIME_DIR=/run/user/1000
-export LANG="cs_CZ.UTF-8"
-export LC_COLLATE="C.UTF-8"
+
 
 # Path to your oh-my-zsh installation.
 export ZSH="/usr/share/zsh/site-contrib/oh-my-zsh"

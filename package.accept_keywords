@@ -10,6 +10,29 @@ app-misc/nwg-look ~amd64
 # DEV-CPP
 dev-cpp/sdbus-c++ ~amd64
 
+# DEV-LANG
+dev-lang/php ~amd64
+
+# DEV-PHP
+dev-php/ca-bundle ~amd64
+dev-php/composer ~amd64
+dev-php/json-schema ~amd64
+dev-php/jsonlint ~amd64
+dev-php/metadata-minifier ~amd64
+dev-php/phar-utils ~amd64
+dev-php/php ~amd64
+dev-php/psr-log ~amd64
+dev-php/semver ~amd64
+dev-php/spdx-licenses ~amd64
+dev-php/symfony-config ~amd64
+dev-php/symfony-console ~amd64
+dev-php/symfony-dependency-injection ~amd64
+dev-php/symfony-event-dispatcher ~amd64
+dev-php/symfony-filesystem ~amd64
+dev-php/symfony-finder ~amd64
+dev-php/symfony-process ~amd64
+dev-php/xdebug-handler ~amd64
+
 # GUI-APPS
 gui-apps/hypridle ~amd64
 gui-apps/hyprlock ~amd64
