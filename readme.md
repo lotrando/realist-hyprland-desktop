@@ -469,7 +469,7 @@ emerge -NDU @world
 ### Create zen-kernel and install important system packages 
 59 packages
 ```
-emerge seatd dhcpcd grub terminus-font sudo f2fs-tools dev-vcs/git eselect-repository genkernel linux-firmware zen-sources --noreplace nano && genkernel all
+emerge dhcpcd grub terminus-font sudo f2fs-tools dev-vcs/git eselect-repository genkernel linux-firmware zen-sources --noreplace nano && genkernel all
 ```
 
 ### Create user (replace realist and toor with custom user and password)
@@ -512,10 +512,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zs
 eselect repository enable guru && emaint sync -r guru
 ```
 ```
-emerge hyprland hyprpaper hyprpicker hyprland-contrib xdg-desktop-portal-hyprland waybar xwayland
-```
-```
-emerge grim slurp neofetch eix gentoolkit kitty imagemagick ubuntu-font-family gnome-themes-standard elementary-xfce-icon-theme rofi-wayland qt5ct adwaita-qt pipewire firefox-bin mpv audacious nwg-look pulsemixer
+emerge seatd hyprland hyprpaper hyprpicker hyprland-contrib xdg-desktop-portal-hyprland waybar grim slurp neofetch eix gentoolkit kitty imagemagick ubuntu-font-family gnome-themes-standard elementary-xfce-icon-theme rofi-wayland qt5ct adwaita-qt pipewire firefox mpv audacious nwg-look pulsemixer
 ```
 
 ### Install WEB developers packages ( optional )
