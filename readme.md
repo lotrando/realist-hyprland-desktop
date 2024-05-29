@@ -50,11 +50,11 @@ cd /mnt/gentoo
 ```
 
 ```
-wget https://distfiles.gentoo.org/releases/amd64/autobuilds/20240519T170355Z/stage3-amd64-openrc-20240519T170355Z.tar.xz
+wget https://distfiles.gentoo.org/releases/amd64/autobuilds/20240526T163557Z/stage3-amd64-openrc-20240526T163557Z.tar.xz
 ```
 
 ```
-tar xpf stage3-amd64-openrc-20240519T170355Z.tar.xz --xattrs-include='*.*' --numeric-owner
+tar xpf stage3-amd64-openrc-20240526T163557Z.tar.xz --xattrs-include='*.*' --numeric-owner
 ```
 
 ```
