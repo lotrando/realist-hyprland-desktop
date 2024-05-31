@@ -400,18 +400,6 @@ nano /etc/locale.gen
 cs_CZ.UTF-8 UTF-8
 cs_CZ ISO-8859-2
 ```
-
-### Edit file - /etc/env.d/02locale
-
-```
-nano /etc/env.d/02locale
-```
-
-```
-LANG="cs_CZ.UTF-8"
-LC_COLLATE="C"
-```
-
 ```
 echo "Europe/Prague" > /etc/timezone
 ```
@@ -469,7 +457,7 @@ emerge -NDU @world
 ### Create zen-kernel and install important system packages 
 59 packages
 ```
-emerge dhcpcd grub terminus-font sudo f2fs-tools dev-vcs/git eselect-repository genkernel linux-firmware zen-sources --noreplace nano && genkernel all
+emerge dhcpcd grub terminus-font sudo f2fs-tools eza dev-vcs/git eselect-repository genkernel linux-firmware zen-sources --noreplace nano && genkernel all
 ```
 
 ### Create user (replace realist and toor with custom user and password)
@@ -512,7 +500,12 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zs
 eselect repository enable guru && emaint sync -r guru
 ```
 ```
-emerge seatd hyprland hyprpaper hyprpicker hyprland-contrib xdg-desktop-portal-hyprland waybar grim slurp neofetch eix gentoolkit kitty imagemagick ubuntu-font-family gnome-themes-standard elementary-xfce-icon-theme rofi-wayland qt5ct adwaita-qt pipewire firefox mpv audacious nwg-look pulsemixer
+emerge seatd hyprland hyprpaper hyprland-contrib xdg-desktop-portal-hyprland waybar grim slurp kitty pipewire
+```
+
+## Apps
+```
+emerge neofetch eix gentoolkit imagemagick ubuntu-font-family gnome-themes-standard elementary-xfce-icon-theme rofi-wayland qt5ct adwaita-qt firefox mpv audacious nwg-look wlogout pulsemixer
 ```
 
 ### Install WEB developers packages ( optional )
@@ -634,10 +627,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 rc-update add elogind boot && rc-update add consolefont default && rc-update add numlock default
 ```
 ```
-rc-update add sshd default && rc-update add dbus default && rc-update add alsasound default
-```
-```
-rc-update add dhcpcd default && rc-update add seatd default
+rc-update add sshd default && rc-update add dbus default && rc-update add dhcpcd default
 ```
 
 
