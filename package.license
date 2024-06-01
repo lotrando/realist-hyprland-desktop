@@ -1,8 +1,0 @@
-# RHMD - Realist Hyprland Minimal Desktop - package.license file -> /etc/portage/package.license
-
-# APP-EDITORS
-app-editors/vscode Microsoft-vscode
-app-editors/sublime-text Sublime
-
-# SYS-KERNEL
-sys-kernel/linux-firmware linux-fw-redistributable no-source-code
