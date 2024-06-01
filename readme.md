@@ -505,7 +505,7 @@ emerge seatd hyprland hyprpaper hyprland-contrib xdg-desktop-portal-hyprland way
 
 ## Apps
 ```
-emerge neofetch eix gentoolkit imagemagick ubuntu-font-family gnome-themes-standard elementary-xfce-icon-theme rofi-wayland qt5ct adwaita-qt firefox mpv audacious nwg-look wlogout pulsemixer
+emerge neofetch eix gentoolkit imagemagick ubuntu-font-family gvfs thunar btop rofi-wayland qt5ct adwaita-qt firefox mpv audacious nwg-look wlogout pulsemixer
 ```
 
 ### Install WEB developers packages ( optional )
