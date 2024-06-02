@@ -168,6 +168,15 @@ cat >> /usr/lib/tmpfiles.d/mysql.conf << IEND
 d /run/mysqld 0755 mysql mysql -
 IEND
 
+cd /home/realist
+wget -q $GENTOO_INSTALLER_URL/.bash_profile
+wget -q $GENTOO_INSTALLER_URL/.bashrc
+wget -q $GENTOO_INSTALLER_URL/.zlogin
+wget -q $GENTOO_INSTALLER_URL/.zshrc
+wget -q $GENTOO_INSTALLER_URL/.p10k.zsh
+
+chown -R $GENTOO_USER:$GENTOO_USER /home/$GENTOO_USER
+
 sed -i 's/SSL_DEFAULT_VHOST/PHP/g' /etc/conf.d/apache2
 echo "ServerName localhost" >> /etc/apache2/httpd.conf
 rm -R /var/www/localhost/htdocs/index.html
