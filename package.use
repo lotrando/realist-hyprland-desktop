@@ -1,0 +1,102 @@
+# RHMD
+# Realist Hyperland Minimal Desktop LTO & GPO version 2024
+# package.use file -> /etc/portage/package.use
+# (c) 2024
+
+sys-kernel/installkernel dracut
+
+# PYTHON TARGETS
+*/* PYTHON_TARGETS: python3_11 python3_12
+*/* PYTHON_SINGLE_TARGET: python3_11 -python3_12
+
+# APP-ARCH
+app-arch/xz-utils pgo
+
+# APP-CRYPT
+app-crypt/gcr gtk
+
+# APP-ESELECT
+app-eselect/eselect-php apache2 fpm
+
+# APP-MISC
+app-misc/mc -slang unicode gpm sftp
+
+# APP-TEXT
+app-text/poppler cairo
+app-text/xmlto text
+
+# DEV-CPP
+dev-cpp/cairomm X
+dev-cpp/gtkmm X
+
+# DEV-LANG
+dev-lang/python pgo
+dev-lang/php apache2 bcmath curl fpm gd mysql mysqli pdo soap sockets spell sqlite xmlreader xmlwriter zip
+
+# DEV-LIBS
+dev-libs/libdbusmenu gtk3
+
+# DEV-QT
+dev-qt/qtgui egl X
+
+# GNOME-BASE
+gnome-base/gvfs cdda http udisks nfs archive fuse
+
+# GUI-APPS
+gui-apps/rofi-wayland drun windowmode
+gui-apps/waybar pulseaudio udev network tray upower wifi evdev
+gui-apps/wlogout zsh-completions
+
+# GUI-LIBS
+gui-libs/wlroots X tinywl 11-backend
+
+# GUI-WM
+gui-wm/hyprland X
+
+# MEDIA-FONTS
+media-fonts/terminus-font -ru-g
+
+# MEDIA-GFX
+media-gfx/imagemagick djvu jpeg svg xml zip
+
+# MEDIA-LIBS
+media-libs/libepoxy X
+media-libs/libglvnd X
+media-libs/libsdl2 gles2 X
+media-libs/libvpx postproc
+media-libs/mesa X
+
+# MEDIA-PLUGINS
+media-plugins/audacious-plugins nls pipewire cdda cue ffmpeg flac http lame libnotify modplug mp3 opus sndfile wavpack
+
+# MEDIA-VIDEO
+media-video/ffmpeg modplug mp3 opus pulseaudio svg v4l openh264 libv4l x264 x265 xvid
+media-video/mpv cdda dvd jpeg
+media-video/pipewire sound-server v4l
+
+# NET-P2P
+net-p2p/transmission appindicator qt5
+
+# SYS-BOOT
+sys-boot/grub mount
+
+# SYS-DEVEL
+sys-devel/binutils pgo
+sys-devel/gcc graphite lto pgo
+
+# SYS-KERNEL
+sys-kernel/linux-firmware initramfs
+sys-kernel/zen-sources symlink
+
+# WWW-CLIENT
+www-client/firefox lto pgo
+
+# X11-LIBS
+x11-libs/cairo X
+x11-libs/gtk+ X
+x11-libs/libdrm video_cards_radeon
+x11-libs/libxkbcommon X
+x11-libs/pango X
+
+# XFCE-BASE
+xfce-base/tumbler epub ffmpeg jpeg odf pdf
