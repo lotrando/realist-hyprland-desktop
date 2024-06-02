@@ -10,7 +10,7 @@ This project contains complete installation commands and config files for create
 
 ## Final desktop - One monitor screenshot
 
-<img src="singl.png" alt="One Monitor Screenshot" />
+<img src="single.png" alt="One Monitor Screenshot" />
 
 ## Grub Screen
 
