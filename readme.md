@@ -446,13 +446,13 @@ ln -s net.lo net.enp0s3
 ## Compiling phase
 
 ```
-emerge -NDU @world
+emerge -g python gcc llvm && emerge -NDU @world
 ```
 
 ### Create zen-kernel and install important system packages 
 
 ```
-emerge dhcpcd grub terminus-font sudo f2fs-tools eza dev-vcs/git eselect-repository genkernel linux-firmware zen-sources --noreplace nano && genkernel all
+emerge -g dhcpcd grub terminus-font sudo f2fs-tools eza dev-vcs/git eselect-repository genkernel linux-firmware zen-sources --noreplace nano && genkernel all
 ```
 
 ### Create user (replace realist and toor with custom user and password)
