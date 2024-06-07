@@ -476,7 +476,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git /usr/share/zsh/si
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zsh/site-contrib/oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 ```
 
-## Desktop
+## Desktop - HYPRLAND
 ```
 eselect repository enable guru && emaint sync -r guru
 ```
@@ -486,7 +486,7 @@ emerge seatd hyprland hyprpaper hyprland-contrib xdg-desktop-portal-hyprland way
 
 ## Apps
 ```
-emerge ubuntu-font-family gvfs thunar rofi-wayland qt5ct adwaita-qt nwg-look wlogout pulsemixer
+emerge ubuntu-font-family gvfs thunar rofi-wayland qt5ct adwaita-qt adwaita-gtk wlogout pulsemixer
 ```
 
 ## Multimedia
