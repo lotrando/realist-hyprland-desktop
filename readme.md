@@ -50,10 +50,10 @@ mkdir -p /mnt/gentoo/boot && mount /dev/sda1 /mnt/gentoo/boot
 cd /mnt/gentoo
 ```
 ```
-wget https://distfiles.gentoo.org/releases/amd64/autobuilds/20240526T163557Z/stage3-amd64-openrc-20240526T163557Z.tar.xz
+wget https://distfiles.gentoo.org/releases/amd64/autobuilds/20240602T164858Z/stage3-amd64-openrc-20240602T164858Z.tar.xz
 ```
 ```
-tar xpf stage3-amd64-openrc-20240526T163557Z.tar.xz --xattrs-include='*.*' --numeric-owner
+tar xpf stage3-amd64-openrc-20240602T164858Z.tar.xz --xattrs-include='*.*' --numeric-owner
 ```
 ```
 mkdir -p /mnt/gentoo/var/db/repos/gentoo && mkdir -p /mnt/gentoo/etc/portage/repos.conf
