@@ -623,6 +623,10 @@ rc-update add elogind boot && rc-update add consolefont default && rc-update add
 ```
 rc-update add sshd default && rc-update add dbus default && rc-update add dhcpcd default
 ```
+```
+rc-update add mysql default && rc-update add apache2 default
+```
+
 
 
 ### Cleaning and reboot to Hyprland desktop
