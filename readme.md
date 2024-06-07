@@ -452,19 +452,7 @@ emerge -g python gcc llvm && emerge -NDU @world
 ### Create zen-kernel and install important system packages 
 
 ```
-emerge -g dhcpcd grub terminus-font sudo f2fs-tools eza dev-vcs/git usbutils eselect-repository genkernel linux-firmware zen-sources --noreplace nano && genkernel all
-```
-
-### Create user (replace realist and toor with custom user and password)
-
-```
-useradd -m -G audio,video,usb,cdrom,portage,users,wheel -s /bin/bash realist
-```
-```
-echo "root:toor" | chpasswd -c SHA256
-```
-```
-echo "realist:toor" | chpasswd -c SHA256
+emerge -g dhcpcd grub terminus-font sudo f2fs-tools eza neofetch btop dev-vcs/git usbutils eselect-repository genkernel linux-firmware zen-sources --noreplace nano && genkernel all
 ```
 
 ### Add repository overlay mv for OH-MY-ZSH
@@ -476,7 +464,7 @@ eselect repository enable mv && emaint sync -r mv && emerge --oneshot sys-apps/p
 emerge oh-my-zsh gentoo-zsh-completions zsh-completions
 ```
 
-### Install oh-my-zsh plugins and theme
+### Install oh-my-zsh plugins and p10k theme
 
 ```
 git clone https://github.com/romkatv/powerlevel10k.git /usr/share/zsh/site-contrib/oh-my-zsh/custom/themes/powerlevel10k
@@ -493,12 +481,34 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zs
 eselect repository enable guru && emaint sync -r guru
 ```
 ```
-emerge seatd hyprland hyprpaper hyprland-contrib xdg-desktop-portal-hyprland waybar grim slurp kitty pipewire
+emerge seatd hyprland hyprpaper hyprland-contrib xdg-desktop-portal-hyprland waybar grim slurp kitty pipewire eix gentoolkit
 ```
 
 ## Apps
 ```
-emerge neofetch eix gentoolkit imagemagick ubuntu-font-family gvfs thunar btop rofi-wayland qt5ct adwaita-qt firefox mpv audacious nwg-look wlogout pulsemixer
+emerge ubuntu-font-family gvfs thunar rofi-wayland qt5ct adwaita-qt nwg-look wlogout pulsemixer
+```
+
+## Multimedia
+```
+emerge mpv audacious roboto imagemagick
+```
+
+## WEB
+```
+emerge firefox
+```
+
+### Create user (replace realist and toor with custom user and password)
+
+```
+useradd -m -G audio,video,usb,cdrom,portage,users,wheel,input -s /bin/bash realist
+```
+```
+echo "root:toor" | chpasswd -c SHA256
+```
+```
+echo "realist:toor" | chpasswd -c SHA256
 ```
 
 ### Install WEB developers packages ( optional )
