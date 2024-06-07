@@ -486,17 +486,7 @@ emerge seatd hyprland hyprpaper hyprland-contrib xdg-desktop-portal-hyprland way
 
 ## Apps
 ```
-emerge ubuntu-font-family gvfs thunar rofi-wayland qt5ct adwaita-qt wlogout pulsemixer
-```
-
-## Multimedia
-```
-emerge mpv audacious roboto imagemagick
-```
-
-## WEB
-```
-emerge firefox
+emerge ubuntu-font-family gvfs thunar rofi-wayland qt5ct adwaita-qt wlogout pulsemixer pavucontrol mpv audacious roboto imagemagick firefox
 ```
 
 ### Create user (replace realist and toor with custom user and password)
