@@ -486,7 +486,7 @@ emerge seatd hyprland hyprpaper hyprland-contrib xdg-desktop-portal-hyprland way
 
 ## Apps
 ```
-emerge ubuntu-font-family gvfs thunar rofi-wayland qt5ct adwaita-qt adwaita-gtk wlogout pulsemixer
+emerge ubuntu-font-family gvfs thunar rofi-wayland qt5ct adwaita-qt wlogout pulsemixer
 ```
 
 ## Multimedia
