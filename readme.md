@@ -646,3 +646,6 @@ cd / && umount -R /mnt/gentoo && reboot
 | Win-Left,           | Switch focus to prev monitor                             |
 | Win-t               | Toggle floating window back to tile                      |
 | Win-Space           | Toggles noborder/full                                    |
+| Win-s               | Grab all monitors screenshot                             |
+| Win-Alt-s           | Chose monitor to grab screenshot                         |
+| Win-Alt-a           | Chose area to grab screenshot                            |
