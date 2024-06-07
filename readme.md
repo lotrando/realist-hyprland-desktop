@@ -452,7 +452,7 @@ emerge -g python gcc llvm && emerge -NDU @world
 ### Create zen-kernel and install important system packages 
 
 ```
-emerge -g dhcpcd grub terminus-font sudo f2fs-tools eza neofetch btop dev-vcs/git usbutils eselect-repository genkernel linux-firmware zen-sources --noreplace nano && genkernel all
+emerge -g dhcpcd grub os-prober terminus-font sudo f2fs-tools eza neofetch btop dev-vcs/git usbutils eselect-repository genkernel linux-firmware zen-sources --noreplace nano && genkernel all
 ```
 
 ### Add repository overlay mv for OH-MY-ZSH
