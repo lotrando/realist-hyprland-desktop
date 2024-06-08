@@ -133,7 +133,7 @@ DISTDIR="/var/cache/distfiles"
 PKGDIR="/var/cache/binpkgs"
 PORTAGE_NICENESS=19
 PORTAGE_IONICE_COMMAND="ionice -c 3 -p \${PID}"
-EMERGE_DEFAULT_OPTS="-v --ask-enter-invalid --jobs=4 --load-average=4"
+EMERGE_DEFAULT_OPTS="-v --ask-enter-invalid --jobs=1 --load-average=4"
 FEATURES="buildpkg parallel-fetch"
 
 ACCEPT_KEYWORDS="amd64"
@@ -143,7 +143,7 @@ GRUB_PLATFORMS="pc efi-64"
 L10N="cs"
 
 INPUT_DEVICES="libinput"
-VIDEO_CARDS="vmware amdgpu radeonsi"
+VIDEO_CARDS="amdgpu radeonsi vmware"
 ```
 
 ### File - /etc/portage/package.accept_keywords
@@ -217,6 +217,9 @@ gui-wm/hyprland-contrib ~amd64
 media-video/pipewire ~amd64
 media-video/wireplumber ~amd64
 
+# NET-MISC
+net-misc/youtube-viewer ~amd64
+
 # SYS-APSS
 sys-apps/eza ~amd64
 
@@ -241,7 +244,7 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 
 # PYTHON TARGETS
 */* PYTHON_TARGETS: python3_11 python3_12
-*/* PYTHON_SINGLE_TARGET: python3_11 -python3_12
+*/* PYTHON_SINGLE_TARGET: -python3_11 python3_12
 
 # APP-ARCH
 app-arch/xz-utils pgo
@@ -304,7 +307,7 @@ media-libs/mesa X
 media-plugins/audacious-plugins nls pipewire cdda cue ffmpeg flac http lame libnotify modplug mp3 opus sndfile wavpack
 
 # MEDIA-VIDEO
-media-video/ffmpeg modplug mp3 opus pulseaudio svg v4l openh264 libv4l x264 x265 xvid
+media-video/ffmpeg modplug mp3 opus pulseaudio svg v4l openh264 libv4l webp x264 x265 xvid
 media-video/mpv cdda dvd jpeg
 media-video/pipewire sound-server v4l
 
@@ -334,6 +337,7 @@ x11-libs/pango X
 
 # XFCE-BASE
 xfce-base/tumbler epub ffmpeg jpeg odf pdf
+xfce-base/thunar exif udisks
 ```
 
 ### Edit file - /etc/portage/package.license
