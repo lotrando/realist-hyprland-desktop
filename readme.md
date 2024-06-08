@@ -453,7 +453,7 @@ ln -s net.lo net.enp0s3
 emerge -g python gcc llvm && emerge -NDU @world
 ```
 
-### Create zen-kernel and install important system packages 
+### Create zen-kernel and install important system packages
 
 ```
 emerge -g dhcpcd grub os-prober terminus-font sudo f2fs-tools eza neofetch btop dev-vcs/git usbutils eselect-repository genkernel linux-firmware zen-sources --noreplace nano && genkernel all
@@ -490,13 +490,13 @@ emerge seatd hyprland hyprpaper hyprland-contrib xdg-desktop-portal-hyprland way
 
 ## Apps
 ```
-emerge ubuntu-font-family gvfs thunar rofi-wayland qt5ct adwaita-qt wlogout pulsemixer pavucontrol mpv audacious roboto imagemagick firefox rocm-smi thunar-media-tags-plugin thunar-archive-plugin media-video/ffmpegthumbna
+emerge ubuntu-font-family gvfs thunar rofi-wayland qt5ct adwaita-qt wlogout pulsemixer pavucontrol mpv audacious roboto imagemagick firefox rocm-smi thunar-media-tags-plugin thunar-archive-plugin media-video/ffmpegthumbnaler ristretto tumbler virtualbox
 ```
 
 ### Create user (replace realist and toor with custom user and password)
 
 ```
-useradd -m -G audio,video,usb,cdrom,portage,users,wheel,input -s /bin/bash realist
+useradd -m -G audio,video,usb,cdrom,portage,users,wheel,pipewire,vboxuser,input -s /bin/bash realist
 ```
 ```
 echo "root:toor" | chpasswd -c SHA256
