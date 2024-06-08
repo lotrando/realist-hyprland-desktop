@@ -62,6 +62,9 @@ gui-wm/hyprland-contrib ~amd64
 media-video/pipewire ~amd64
 media-video/wireplumber ~amd64
 
+# NET-MISC
+net-misc/youtube-viewer ~amd64
+
 # SYS-APSS
 sys-apps/eza ~amd64
 

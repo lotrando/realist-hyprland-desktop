@@ -1,4 +1,7 @@
-# .bash_profile
+# RHMD
+# Realist Hyperland Minimal Desktop LTO & GPO version
+# .bashrc file -> ~/.bashrc
+# (c) 2024
 
 if shopt -q login_shell; then
     [[ -f ~/.bashrc ]] && source ~/.bashrc
