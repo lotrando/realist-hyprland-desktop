@@ -589,6 +589,9 @@ sed -i 's/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/g' /etc/sudoers
 cd /home/realist
 ```
 ```
+git clone https://github.com/lotrando/realist-hyprland-desktop-rice.git
+```
+```
 chown -R realist:realist /home/realist/
 ```
 
