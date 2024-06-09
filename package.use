@@ -87,7 +87,7 @@ sys-kernel/linux-firmware initramfs
 sys-kernel/zen-sources symlink
 
 # WWW-CLIENT
-www-client/firefox lto pgo
+www-client/firefox lto pgo pulseaudio
 
 # X11-LIBS
 x11-libs/cairo X
