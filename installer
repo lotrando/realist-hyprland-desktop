@@ -261,7 +261,7 @@ env-update && source /etc/profile
 emerge -g gcc
 emerge linux-firmware && emerge gentoo-kernel-bin
 #emerge genkernel linux-firmware zen-sources && genkernel all
-emerge dhcpcd grub os-prober elogind dbus terminus-font sudo f2fs-tools app-misc/mc dev-vcs/git eselect-repository
+emerge dhcpcd grub os-prober elogind sys-apps/dbus terminus-font sudo f2fs-tools app-misc/mc dev-vcs/git eselect-repository
 # emerge -NDU @world
 
 # eselect repository enable mv && emaint sync -r mv && emerge --oneshot sys-apps/portage
