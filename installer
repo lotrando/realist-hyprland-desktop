@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # Fast Universal Gentoo Instalation Script - Created by Realist - (c) 2024 v 1.3
-# RHMD - Realist Hyprland Minimized Desktop - EFI F2FS SSD Version with LTO PGO
+# RMS - Realist Minimized Starter - EFI F2FS SSD Version with LTO PGO
 
 # VARIABLES
 TARGET_DISK=/dev/sda
-TARGET_LAN=eno1
+TARGET_LAN=enp0s3
 GENTOO_ROOT_PASSWORD=toor
 GENTOO_USER=realist
 GENTOO_USER_PASSWORD=toor
-GENTOO_HOSTNAME=hyprland
+GENTOO_HOSTNAME=starter
 GENTOO_DOMAINNAME=gentoo.dev
 GENTOO_INSTALLER_URL=https://github.com/lotrando/realist-hyprland-desktop/blob/main
 GENTOO_INSTALLER_URL=http://94.113.201.164:55/hyprland
@@ -74,10 +74,165 @@ cd /etc/portage/
 rm make.conf && rm -R package.use && rm -R package.accept_keywords && rm -R package.mask
 
 wget -q $GENTOO_INSTALLER_URL/make.conf
-wget -q $GENTOO_INSTALLER_URL/package.accept_keywords
-wget -q $GENTOO_INSTALLER_URL/package.use
-wget -q $GENTOO_INSTALLER_URL/package.license
-wget -q $GENTOO_INSTALLER_URL/package.mask
+
+cat >> /etc/portage/package.accept_keywords << IEND
+# RHMD
+# Realist Hyperland Minimal Desktop LTO & GPO version
+# package.accept_keywords file (c) 2024 -> /etc/portage/package.accept_keywords
+# (c) 2024
+
+# APP-MISC
+app-misc/ca-certificates ~amd64
+app-misc/nwg-look ~amd64
+
+# APP-SHELLS
+app-shells/oh-my-zsh ~amd64
+app-shells/zsh-autosuggestions ~amd64
+app-shells/zsh-syntax-highlighting ~amd64
+
+# DEV-CPP
+dev-cpp/sdbus-c++ ~amd64
+
+# DEV-UTIL
+dev-util/rocm-smi ~amd64
+
+# GUI-APPS
+gui-apps/hyprpaper ~amd64
+gui-apps/hyprpicker ~amd64
+gui-apps/rofi-wayland ~amd64
+gui-apps/waybar ~amd64
+gui-apps/wlogout ~amd64
+
+# GUI-LIBS
+gui-libs/xdg-desktop-portal-hyprland ~amd64
+
+# GUI-WM
+gui-wm/hyprland-contrib ~amd64
+
+# MEDIA-VIDEO
+media-video/pipewire ~amd64
+media-video/wireplumber ~amd64
+
+# SYS-APSS
+sys-apps/eza ~amd64
+
+# SYS-KERNEL
+sys-kernel/zen-sources ~amd64
+IEND
+
+cat >> /etc/portage/package.use << IEND
+# RHMD
+# Realist Hyperland Minimal Desktop LTO & GPO version
+# package.use file (c) 2024 -> /etc/portage/package.use
+# (c) 2024
+
+*/* PYTHON_TARGETS: python3_11 python3_12
+*/* PYTHON_SINGLE_TARGET: -python3_11 python3_12
+
+# APP-ARCH
+app-arch/xz-utils pgo
+
+# APP-CRYPT
+app-crypt/gcr gtk
+
+# APP-MISC
+app-misc/mc -slang unicode gpm sftp
+
+# APP-TEXT
+app-text/poppler cairo
+app-text/xmlto text
+
+# DEV-CPP
+dev-cpp/cairomm X
+dev-cpp/gtkmm X
+
+# DEV-LANG
+dev-lang/python pgo
+
+# DEV-LIBS
+dev-libs/libdbusmenu gtk3
+
+# DEV-QT
+dev-qt/qtgui egl X
+
+# GNOME-BASE
+gnome-base/gvfs cdda http udisks nfs archive fuse
+
+# GUI-APPS
+gui-apps/rofi-wayland drun windowmode
+gui-apps/waybar pulseaudio udev network tray upower wifi evdev
+gui-apps/wlogout zsh-completions
+
+# GUI-LIBS
+gui-libs/wlroots X tinywl 11-backend
+
+# GUI-WM
+gui-wm/hyprland X
+
+# MEDIA-FONTS
+media-fonts/terminus-font -ru-g
+
+# MEDIA-GFX
+media-gfx/imagemagick djvu jpeg svg xml zip
+
+# MEDIA-LIBS
+media-libs/libepoxy X
+media-libs/libglvnd X
+media-libs/libsdl2 gles2 X
+media-libs/libvpx postproc
+media-libs/mesa X
+
+# MEDIA-PLUGINS
+media-plugins/audacious-plugins nls pipewire cdda cue ffmpeg flac http lame libnotify modplug mp3 opus sndfile wavpack
+
+# MEDIA-VIDEO
+media-video/ffmpeg modplug mp3 opus pulseaudio svg v4l openh264 libv4l webp x264 x265 xvid
+media-video/mpv cdda dvd jpeg
+media-video/pipewire sound-server v4l
+
+# SYS-BOOT
+sys-boot/grub mount
+
+# SYS-DEVEL
+sys-devel/binutils pgo
+sys-devel/gcc graphite lto pgo
+
+# SYS-KERNEL
+sys-kernel/installkernel dracut
+sys-kernel/linux-firmware initramfs
+sys-kernel/zen-sources symlink
+
+# WWW-CLIENT
+www-client/firefox lto pgo pulseaudio
+
+# X11-LIBS
+x11-libs/cairo X
+x11-libs/gtk+ X
+x11-libs/libdrm video_cards_radeon
+x11-libs/libxkbcommon X
+x11-libs/pango X
+
+# XFCE-BASE
+xfce-base/thunar exif udisks
+xfce-base/tumbler epub ffmpeg jpeg odf pdf
+IEND
+
+cat >> /etc/portage/package.license << IEND
+# RHMD
+# Realist Hyperland Minimal Desktop LTO & GPO version
+# package.license file (c) 2024 -> /etc/portage/package.license
+# (c) 2024
+
+# SYS-KERNEL
+sys-kernel/linux-firmware linux-fw-redistributable no-source-code
+IEND
+
+cat >> /etc/portage/package.mask << IEND
+# RHMD
+# Realist Hyperland Minimal Desktop LTO & GPO version
+# package.mask file (c) 2024 -> /etc/portage/package.mask
+# (c) 2024
+IEND
 
 cat >> /etc/fstab << IEND
 ${TARGET_DISK}1   /boot   vfat    noatime      0 2
@@ -96,11 +251,6 @@ cs_CZ.UTF-8 UTF-8
 cs_CZ ISO-8859-2
 IEND
 
-# cat >> /etc/env.d/02locale << IEND
-# LANG="cs_CZ.UTF-8"
-# LC_COLLATE="C"
-# IEND
-
 locale-gen
 
 echo "$GENTOO_ZONEINFO" > /etc/timezone
@@ -112,20 +262,14 @@ echo "$GENTOO_USER:$GENTOO_USER_PASSWORD" | chpasswd -c SHA256
 
 # ----------------------------------------------------------------------------
 
-emerge -g gcc
+emerge -g gcc python
+
 emerge linux-firmware && emerge gentoo-kernel-bin
-#emerge -g genkernel linux-firmware zen-sources && genkernel all
+#emerge genkernel linux-firmware zen-sources && genkernel all
 
-emerge -g dhcpcd grub os-prober terminus-font sudo f2fs-tools ntfs3g dev-vcs/git eselect-repository
-
-eselect repository enable mv && emaint sync -r mv
-eselect repository enable guru && emaint sync -r guru
-
-emerge -gNDU @world
-
-#emerge -g seatd hyprland hyprpaper hyprpicker hyprland-contrib xdg-desktop-portal-hyprland waybar rofi-wayland wlogout grim slurp kitty pipewire
-
-emerge -g oh-my-zsh gentoo-zsh-completions zsh-completions usbutils pciutils eza btop app-misc/mc faenza-icon-theme adwaita-qt qt5ct fira-code roboto ubuntu-font-family neofetch eix gentoolkit tumbler thunar firefox imagemagick nwg-look pavucontrol audacious mpv virtualbox ristretto --noreplace nano
+emerge dhcpcd grub os-prober terminus-font sudo f2fs-tools ntfs3g dev-vcs/git eselect-repository
+emerge NDU @world
+emerge oh-my-zsh gentoo-zsh-completions zsh-completions usbutils pciutils eza btop app-misc/mc faenza-icon-theme adwaita-qt qt5ct fira-code roboto ubuntu-font-family neofetch eix gentoolkit tumbler thunar firefox imagemagick nwg-look pavucontrol audacious mpv virtualbox ristretto --noreplace nano
 git clone https://github.com/romkatv/powerlevel10k.git /usr/share/zsh/site-contrib/oh-my-zsh/custom/themes/powerlevel10k
 git clone https://github.com/zsh-users/zsh-autosuggestions.git /usr/share/zsh/site-contrib/oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zsh/site-contrib/oh-my-zsh/custom/plugins/zsh-syntax-highlighting
@@ -151,8 +295,10 @@ cd /boot/grub
 wget -q https://github.com/lotrando/realist-hyprland-desktop/blob/main/grub.png
 grub-mkconfig -o /boot/grub/grub.cfg
 
-rc-update add elogind boot && rc-update add consolefont default && rc-update add numlock default
-rc-update add sshd default && rc-update add dbus default && rc-update add dhcpcd default
+rc-update add consolefont default && rc-update add numlock default
+rc-update add sshd default && rc-update add dhcpcd default
+
+#rc-update add elogind boot && rc-update add dbus default
 
 cd /home/realist
 git clone https://github.com/lotrando/realist-hyprland-desktop-rice.git
