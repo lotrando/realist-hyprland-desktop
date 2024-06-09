@@ -96,10 +96,12 @@ cs_CZ.UTF-8 UTF-8
 cs_CZ ISO-8859-2
 IEND
 
-cat >> /etc/env.d/02locale << IEND
-LANG="cs_CZ.UTF-8"
-LC_COLLATE="C"
-IEND
+# cat >> /etc/env.d/02locale << IEND
+# LANG="cs_CZ.UTF-8"
+# LC_COLLATE="C"
+# IEND
+
+locale-gen
 
 echo "$GENTOO_ZONEINFO" > /etc/timezone
 env-update && source /etc/profile
@@ -110,7 +112,7 @@ echo "$GENTOO_USER:$GENTOO_USER_PASSWORD" | chpasswd -c SHA256
 
 # ----------------------------------------------------------------------------
 
-emerge -g gcc llvm python
+emerge -g gcc
 emerge gentoo-kernel-bin
 #emerge -g genkernel linux-firmware zen-sources && genkernel all
 
@@ -121,7 +123,7 @@ eselect repository enable guru && emaint sync -r guru
 
 emerge -gNDU @world
 
-emerge -g seatd hyprland hyprpaper hyprpicker hyprland-contrib xdg-desktop-portal-hyprland waybar rofi-wayland wlogout grim slurp kitty pipewire
+#emerge -g seatd hyprland hyprpaper hyprpicker hyprland-contrib xdg-desktop-portal-hyprland waybar rofi-wayland wlogout grim slurp kitty pipewire
 
 emerge -g oh-my-zsh gentoo-zsh-completions zsh-completions usbutils pciutils eza btop app-misc/mc faenza-icon-theme adwaita-qt qt5ct fira-code roboto ubuntu-font-family neofetch eix gentoolkit tumbler thunar firefox imagemagick nwg-look pavucontrol audacious mpv virtualbox ristretto --noreplace nano
 git clone https://github.com/romkatv/powerlevel10k.git /usr/share/zsh/site-contrib/oh-my-zsh/custom/themes/powerlevel10k
