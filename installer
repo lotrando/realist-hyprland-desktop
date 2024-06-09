@@ -11,7 +11,7 @@ GENTOO_USER=realist
 GENTOO_USER_PASSWORD=toor
 GENTOO_HOSTNAME=starter
 GENTOO_DOMAINNAME=gentoo.dev
-GENTOO_INSTALLER_URL=https://github.com/lotrando/realist-hyprland-desktop/blob/main
+GENTOO_INSTALLER_URL=https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main
 GENTOO_INSTALLER_URL=http://94.113.201.164:55/hyprland
 GRUB_GFX_MODE=1920x1080x32
 GENTOO_KEYMAP=us
@@ -256,18 +256,15 @@ locale-gen
 echo "$GENTOO_ZONEINFO" > /etc/timezone
 env-update && source /etc/profile
 
-echo "root:$GENTOO_ROOT_PASSWORD" | chpasswd -c SHA256
-useradd -m -G audio,video,usb,cdrom,portage,users,wheel,input -s /bin/bash $GENTOO_USER
-echo "$GENTOO_USER:$GENTOO_USER_PASSWORD" | chpasswd -c SHA256
-
 # ----------------------------------------------------------------------------
 
 emerge -g gcc
 emerge linux-firmware && emerge gentoo-kernel-bin
-# emerge genkernel linux-firmware zen-sources && genkernel all
-emerge dhcpcd grub os-prober terminus-font sudo f2fs-tools dev-vcs/git eselect-repository
-# emerge NDU @world
+#emerge genkernel linux-firmware zen-sources && genkernel all
+emerge dhcpcd grub os-prober elogind dbus terminus-font sudo f2fs-tools app-misc/mc dev-vcs/git eselect-repository
+# emerge -NDU @world
 
+# eselect repository enable mv && emaint sync -r mv && emerge --oneshot sys-apps/portage
 # emerge oh-my-zsh gentoo-zsh-completions zsh-completions usbutils pciutils eza btop app-misc/mc faenza-icon-theme adwaita-qt qt5ct fira-code roboto ubuntu-font-family neofetch eix gentoolkit tumbler thunar firefox imagemagick nwg-look pavucontrol audacious mpv virtualbox ristretto --noreplace nano
 # git clone https://github.com/romkatv/powerlevel10k.git /usr/share/zsh/site-contrib/oh-my-zsh/custom/themes/powerlevel10k
 # git clone https://github.com/zsh-users/zsh-autosuggestions.git /usr/share/zsh/site-contrib/oh-my-zsh/custom/plugins/zsh-autosuggestions
@@ -286,18 +283,20 @@ IEND
 
 sed -i 's/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/g' /etc/sudoers
 
-chsh -s /bin/zsh root
-chsh -s /bin/zsh $GENTOO_USER
+useradd -m -G audio,video,usb,cdrom,portage,users,wheel,input -s /bin/bash $GENTOO_USER
+echo "root:$GENTOO_ROOT_PASSWORD" | chpasswd -c SHA256
+echo "$GENTOO_USER:$GENTOO_USER_PASSWORD" | chpasswd -c SHA256
 
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=HYPRLAND --recheck ${TARGET_DISK}
+# chsh -s /bin/zsh $GENTOO_USER
+
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GENTOO --recheck ${TARGET_DISK}
 cd /boot/grub
-wget -q https://github.com/lotrando/realist-hyprland-desktop/blob/main/grub.png
+wget -q $GENTOO_INSTALLER_URL/grub.png
 grub-mkconfig -o /boot/grub/grub.cfg
 
 rc-update add consolefont default && rc-update add numlock default
 rc-update add sshd default && rc-update add dhcpcd default
-
-#rc-update add elogind boot && rc-update add dbus default
+rc-update add elogind boot && rc-update add dbus default
 
 cd /home/realist
 git clone https://github.com/lotrando/realist-hyprland-desktop-rice.git
