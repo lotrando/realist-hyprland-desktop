@@ -162,6 +162,21 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 app-editors/sublime-text ~amd64
 app-editors/vscode ~amd64
 
+# APP-MISC
+app-misc/ca-certificates ~amd64
+app-misc/nwg-look ~amd64
+
+# APP-SHELLS
+app-shells/oh-my-zsh ~amd64
+app-shells/zsh-autosuggestions ~amd64
+app-shells/zsh-syntax-highlighting ~amd64
+
+# DEV-CPP
+dev-cpp/sdbus-c++ ~amd64
+
+# DEV-LANG
+dev-lang/php ~amd64
+
 # DEV-PHP
 dev-php/ca-bundle ~amd64
 dev-php/composer ~amd64
@@ -181,21 +196,6 @@ dev-php/symfony-filesystem ~amd64
 dev-php/symfony-finder ~amd64
 dev-php/symfony-process ~amd64
 dev-php/xdebug-handler ~amd64
-
-# APP-MISC
-app-misc/ca-certificates ~amd64
-app-misc/nwg-look ~amd64
-
-# APP-SHELLS
-app-shells/oh-my-zsh ~amd64
-app-shells/zsh-autosuggestions ~amd64
-app-shells/zsh-syntax-highlighting ~amd64
-
-# DEV-CPP
-dev-cpp/sdbus-c++ ~amd64
-
-# DEV-LANG
-dev-lang/php ~amd64
 
 # DEV-UTIL
 dev-util/rocm-smi ~amd64
@@ -242,7 +242,6 @@ wget https://raw.githubusercontent.com/lotrando/realist-hyprland-desktop/main/pa
 # package.use file -> /etc/portage/package.use
 # (c) 2024
 
-# PYTHON TARGETS
 */* PYTHON_TARGETS: python3_11 python3_12
 */* PYTHON_SINGLE_TARGET: -python3_11 python3_12
 
@@ -267,8 +266,8 @@ dev-cpp/cairomm X
 dev-cpp/gtkmm X
 
 # DEV-LANG
-dev-lang/python pgo
 dev-lang/php apache2 bcmath curl fpm gd mysql mysqli pdo soap sockets spell sqlite xmlreader xmlwriter zip
+dev-lang/python pgo
 
 # DEV-LIBS
 dev-libs/libdbusmenu gtk3
@@ -322,11 +321,12 @@ sys-devel/binutils pgo
 sys-devel/gcc graphite lto pgo
 
 # SYS-KERNEL
+sys-kernel/installkernel dracut
 sys-kernel/linux-firmware initramfs
 sys-kernel/zen-sources symlink
 
 # WWW-CLIENT
-www-client/firefox lto pgo
+www-client/firefox lto pgo pulseaudio
 
 # X11-LIBS
 x11-libs/cairo X
@@ -336,8 +336,8 @@ x11-libs/libxkbcommon X
 x11-libs/pango X
 
 # XFCE-BASE
-xfce-base/tumbler epub ffmpeg jpeg odf pdf
 xfce-base/thunar exif udisks
+xfce-base/tumbler epub ffmpeg jpeg odf pdf
 ```
 
 ### Edit file - /etc/portage/package.license

@@ -83,6 +83,7 @@ sys-devel/binutils pgo
 sys-devel/gcc graphite lto pgo
 
 # SYS-KERNEL
+sys-kernel/installkernel dracut
 sys-kernel/linux-firmware initramfs
 sys-kernel/zen-sources symlink
 

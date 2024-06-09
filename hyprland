@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Fast Universal Gentoo Instalation Script - Created by Realist - (c) 2024 v 1.3
-# Hyprland Perfect Desktop Project - EFI F2FS SSD Version with LTO PGO GCC and PYTHON
+# RHMD - Realist Hyprland Minimized Desktop - EFI F2FS SSD Version with LTO PGO
 
 # VARIABLES
 TARGET_DISK=/dev/sda
@@ -11,15 +11,12 @@ GENTOO_USER=realist
 GENTOO_USER_PASSWORD=toor
 GENTOO_HOSTNAME=hyprland
 GENTOO_DOMAINNAME=gentoo.dev
+GENTOO_INSTALLER_URL=https://github.com/lotrando/realist-hyprland-desktop/blob/main
 GENTOO_INSTALLER_URL=http://94.113.201.164:55/hyprland
-#GENTOO_INSTALLER_URL=https://github.com/lotrando/realist-hyprland-desktop/blob/main
 GRUB_GFX_MODE=1920x1080x32
 GENTOO_KEYMAP=us
 GENTOO_CONSOLEFONT=ter-v16b
 GENTOO_ZONEINFO=Europe/Prague
-
-# DATE
-date date +'%m%d%H%M%Y'
 
 # DISK SETUP
 parted -s ${TARGET_DISK} mklabel gpt
@@ -46,8 +43,8 @@ mount ${TARGET_DISK}1 /mnt/gentoo/boot
 
 # STAGE3 & PORTAGE
 cd /mnt/gentoo
-wget https://distfiles.gentoo.org/releases/amd64/autobuilds/20240526T163557Z/stage3-amd64-openrc-20240526T163557Z.tar.xz
-tar xpf stage3-amd64-openrc-20240526T163557Z.tar.xz --xattrs-include='*.*' --numeric-owner
+wget https://distfiles.gentoo.org/releases/amd64/autobuilds/20240602T164858Z/stage3-amd64-openrc-20240602T164858Z.tar.xz
+tar xpf stage3-amd64-openrc-20240602T164858Z.tar.xz --xattrs-include='*.*' --numeric-owner
 mkdir -p /mnt/gentoo/var/db/repos/gentoo
 mkdir -p /mnt/gentoo/etc/portage/repos.conf
 cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos.conf/
@@ -72,11 +69,10 @@ cat > /mnt/gentoo/root/gentoo-chroot.sh << END
 #!/bin/bash
 
 emerge-webrsync
+
 cd /etc/portage/
-rm make.conf
-rm -R package.use
-rm -R package.accept_keywords
-rm -R package.mask
+rm make.conf && rm -R package.use && rm -R package.accept_keywords && rm -R package.mask
+
 wget -q $GENTOO_INSTALLER_URL/make.conf
 wget -q $GENTOO_INSTALLER_URL/package.accept_keywords
 wget -q $GENTOO_INSTALLER_URL/package.use
@@ -105,7 +101,6 @@ LANG="cs_CZ.UTF-8"
 LC_COLLATE="C"
 IEND
 
-locale-gen
 echo "$GENTOO_ZONEINFO" > /etc/timezone
 env-update && source /etc/profile
 
@@ -115,8 +110,9 @@ echo "$GENTOO_USER:$GENTOO_USER_PASSWORD" | chpasswd -c SHA256
 
 # ----------------------------------------------------------------------------
 
-#emerge gentoo-kernel-bin
-emerge -g genkernel linux-firmware zen-sources && genkernel all
+emerge -g gcc llvm python
+emerge gentoo-kernel-bin
+#emerge -g genkernel linux-firmware zen-sources && genkernel all
 
 emerge -g dhcpcd grub os-prober terminus-font sudo f2fs-tools ntfs3g dev-vcs/git eselect-repository
 
@@ -150,45 +146,15 @@ chsh -s /bin/zsh $GENTOO_USER
 
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=HYPRLAND --recheck ${TARGET_DISK}
 cd /boot/grub
-wget -q $GENTOO_INSTALLER_URL/grub.png
+wget -q https://github.com/lotrando/realist-hyprland-desktop/blob/main/grub.png
 grub-mkconfig -o /boot/grub/grub.cfg
 
 rc-update add elogind boot && rc-update add consolefont default && rc-update add numlock default
 rc-update add sshd default && rc-update add dbus default && rc-update add dhcpcd default
 
-##################
-# WEB DEVELOPERS #
-##################
-
-emerge -g phpmyadmin dev-db/mysql dev-lang/php nodejs composer vscode sublime-text
-rm -R /usr/lib/tmpfiles.d/mysql.conf
-
-cat >> /usr/lib/tmpfiles.d/mysql.conf << IEND
-d /run/mysqld 0755 mysql mysql -
-IEND
-
 cd /home/realist
-wget -q $GENTOO_INSTALLER_URL/.bash_profile
-wget -q $GENTOO_INSTALLER_URL/.bashrc
-wget -q $GENTOO_INSTALLER_URL/.zlogin
-wget -q $GENTOO_INSTALLER_URL/.zshrc
-wget -q $GENTOO_INSTALLER_URL/.p10k.zsh
-
+git clone https://github.com/lotrando/realist-hyprland-desktop-rice.git
 chown -R $GENTOO_USER:$GENTOO_USER /home/$GENTOO_USER
-
-sed -i 's/SSL_DEFAULT_VHOST/PHP/g' /etc/conf.d/apache2
-echo "ServerName localhost" >> /etc/apache2/httpd.conf
-rm -R /var/www/localhost/htdocs/index.html
-echo "<?php phpinfo(); ?>" > /var/www/localhost/htdocs/index.php
-cp /var/www/localhost/htdocs/phpmyadmin/config.sample.inc.php /var/www/localhost/htdocs/phpmyadmin/config.inc.php
-mkdir /var/www/localhost/htdocs/phpmyadmin/tmp/
-chown -R apache:apache /var/www/
-usermod -aG apache $GENTOO_USER
-chmod -R 775 /var/www/localhost/htdocs
-chmod -R 777 /var/www/localhost/htdocs/phpmyadmin/tmp
-echo "#cfg['blowfish_secret'] = 'WntN0150l71sLq/{w4V0:ZXFv7WcB-Qz';" >> /var/www/localhost/htdocs/phpmyadmin/config.inc.php
-rc-update add apache2 default && rc-update add mysql default
-emerge --config mysql
 
 rm -R /root/gentoo-chroot.sh
 END
