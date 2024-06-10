@@ -495,7 +495,7 @@ emerge eix gentoolkit ubuntu-font-family gvfs rofi-wayland qt5ct adwaita-qt wlog
 
 ## Variable
 ```
-emerge virtualbox
+emerge virtualbox && gpasswd -a realist vboxuser
 ```
 
 ### Create user (replace realist and toor with custom user and password)
