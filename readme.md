@@ -456,7 +456,7 @@ emerge -g python gcc llvm && emerge -NDU @world
 ### Create zen-kernel and install important system packages
 
 ```
-emerge -g dhcpcd grub os-prober terminus-font sudo f2fs-tools eza neofetch btop dev-vcs/git usbutils eselect-repository genkernel linux-firmware zen-sources --noreplace nano && genkernel all
+emerge -g dhcpcd grub os-prober terminus-font sudo f2fs-tools dev-vcs/git usbutils eselect-repository genkernel linux-firmware zen-sources --noreplace nano && genkernel all
 ```
 
 ### Add repository overlay mv for OH-MY-ZSH
@@ -485,12 +485,17 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zs
 eselect repository enable guru && emaint sync -r guru
 ```
 ```
-emerge seatd hyprland hyprpaper hyprland-contrib xdg-desktop-portal-hyprland waybar grim slurp kitty pipewire eix gentoolkit
+emerge seatd hyprland hyprpaper hyprland-contrib xdg-desktop-portal-hyprland waybar grim slurp kitty pipewire
 ```
 
 ## Apps
 ```
-emerge ubuntu-font-family gvfs thunar rofi-wayland qt5ct adwaita-qt wlogout pulsemixer pavucontrol mpv audacious roboto imagemagick firefox rocm-smi thunar-media-tags-plugin thunar-archive-plugin media-video/ffmpegthumbnailer ristretto tumbler virtualbox
+emerge eix gentoolkit ubuntu-font-family gvfs rofi-wayland qt5ct adwaita-qt wlogout pulsemixer pavucontrol mpv audacious roboto imagemagick firefox eza neofetch btop rocm-smi thunar xarchiver thunar-media-tags-plugin thunar-archive-plugin media-video/ffmpegthumbnailer ristretto tumbler
+```
+
+## Variable
+```
+emerge virtualbox
 ```
 
 ### Create user (replace realist and toor with custom user and password)
