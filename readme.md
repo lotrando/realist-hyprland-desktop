@@ -485,7 +485,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zs
 eselect repository enable guru && emaint sync -r guru
 ```
 ```
-emerge seatd hyprland hyprpaper hyprland-contrib xdg-desktop-portal-hyprland waybar grim slurp kitty pipewire eix gentoolkit ubuntu-font-family gvfs rofi-wayland qt5ct faenza-icon-theme adwaita-qt wlogout pulsemixer pavucontrol mpv audacious roboto imagemagick firefox eza neofetch btop rocm-smi thunar xarchiver thunar-media-tags-plugin thunar-archive-plugin media-video/ffmpegthumbnailer ristretto tumbler
+emerge seatd hyprland hyprpaper hyprland-contrib xdg-desktop-portal-hyprland waybar grim slurp kitty pipewire eix gentoolkit ubuntu-font-family gvfs rofi-wayland qt5ct faenza-icon-theme adwaita-qt wlogout pulsemixer pavucontrol mpv audacious roboto imagemagick firefox eza neofetch btop rocm-smi thunar xarchiver thunar-media-tags-plugin thunar-archive-plugin media-video/ffmpegthumbnailer ristretto tumbler app-misc/mc
 ```
 
 ## Variable
