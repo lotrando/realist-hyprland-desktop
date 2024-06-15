@@ -2,7 +2,7 @@
 
 ## About this project
 
-RHMD is project contained complete Gentoo linux  installation commands and config files for create minimized own Gentoo desktop with Hyperland. This desktop is intended for web developers, but it can also be used by a regular user.
+RHMD is project contained complete Gentoo linux  installation commands and config files for create minimized own Gentoo desktop with Hyprland. This desktop is intended for web developers, but it can also be used by a regular user.
 
 ## Final desktop - Dual monitors screenshot
 
