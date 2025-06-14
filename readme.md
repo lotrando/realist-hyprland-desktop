@@ -50,10 +50,10 @@ mkdir -p /mnt/gentoo/boot && mount /dev/sda1 /mnt/gentoo/boot
 cd /mnt/gentoo
 ```
 ```
-wget https://distfiles.gentoo.org/releases/amd64/autobuilds/20240616T153408Z/stage3-amd64-openrc-20240616T153408Z.tar.xz
+wget https://gentoo.osuosl.org/releases/amd64/autobuilds/20250608T165347Z/stage3-amd64-openrc-20250608T165347Z.tar.xz
 ```
 ```
-tar xpf stage3-amd64-openrc-20240616T153408Z.tar.xz --xattrs-include='*.*' --numeric-owner
+tar xpf stage3-amd64-openrc-20250608T165347Z.tar.xz --xattrs-include='*.*' --numeric-owner
 ```
 ```
 mkdir -p /mnt/gentoo/var/db/repos/gentoo && mkdir -p /mnt/gentoo/etc/portage/repos.conf
@@ -127,7 +127,7 @@ FFLAGS="${COMMON_FLAGS}"
 MAKE_OPTS="-j6"
 
 GENTOO_MIRRORS="https://mirror.dkm.cz/gentoo/"
-PORTAGE_BINHOST="http://94.113.201.164:55/hyprland"
+PORTAGE_BINHOST=""
 PORTDIR="/var/db/repos/gentoo"
 DISTDIR="/var/cache/distfiles"
 PKGDIR="/var/cache/binpkgs"
